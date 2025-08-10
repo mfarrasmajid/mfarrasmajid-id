@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /*.html$
+Disallow: /images/*
+Disallow: /css/*
+Disallow: /email-templates/*
+Disallow: /fonts/*
+Disallow: /js/*

@@ -1,0 +1,1018 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- title -->
+        <title>Farras Majid - Welcome</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="author" content="ShadAlkane">
+        <!-- description -->
+        <meta name="description" content="Welcome to my website, feel free to browse.">
+        <!-- keywords -->
+        <meta name="keywords" content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, coming soon, faq">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/_shadalkane/icon.png">
+        <!-- favicon -->
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
+        <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+            html {font-size: 15px;}
+            body {font-family: 'Roboto', sans-serif; -webkit-font-smoothing: antialiased; font-size:14px; color:#6f6f6f; font-weight: 400;}
+            section {overflow: inherit !important;}
+            body, html {height: 100%; -moz-osx-font-smoothing: grayscale;}
+            body {margin: 0; background: #222222;}
+            .container-shad {display: flex; align-items: flex-start;}
+            .year-block-shad {height: 100vh; position: relative;}
+            .year-label-shad { position: sticky; top: 100px; font-size: 8rem; font-weight: bold; color: #fafafa; background: #222222; padding: 20px; border-radius: 10px; z-index: 2; text-align: center; line-height: 4rem;}
+            .timeline-shad::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px; background: #ccc;}
+            .cards { flex: 1; padding: 40px;}
+            .year-section-shad { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;}
+            .card { overflow: hidden; max-height: 100vh; transition: max-height 0.8s ease, opacity 0.4s ease, transform 0.4s ease; background: white; border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); font-size: 1.2rem; position: relative;}
+            .card.hide {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            max-height: 0;
+            }
+
+            .card.show {
+            opacity: 1;
+            transform: scale(1);
+            }
+            .cover-top, .cover-bottom, .cover-left, .cover-right, .cover-center {border: 10px solid #aaaaaa; width: 100%; height: 500px; border-radius: 10px; object-fit: cover;}
+            .cover-top { object-position: center top;}
+            .cover-bottom {object-position: center bottom;}
+            .cover-left {object-position: center left;}
+            .cover-right {object-position: center right;}
+            .cover-center {object-position: center center;}
+            .card-header { border-bottom: 0px !important; background-color: #ffffff;}
+            .icon {width: 30%; margin: auto; border: 0px;}
+            .icon-special {width: 40%; border: 0px; border-radius: 20px;}
+            .card-special, .card-special .card-header {background-color: transparent; border: 0px; box-shadow: 0px;}
+            .card-special .card-header {display: flex; align-items: center; justify-content: center; flex-direction: row; display: flex; align-items: center; justify-content: space-between; flex-direction: row;}
+            .card-special .card-header .card-title {display: flex; flex-direction: column;}
+            .card-special .card-header .card-title .title {font-size: 7rem; font-weight: 600; color: #ffffff !important; text-align: center; margin-left: 20px; line-height: 7rem; margin-bottom: 20px;}
+            .card-special .card-header .card-title .message {font-size: 1.5rem; font-weight: 400; color: #ffffff !important; text-align: center; margin-left: 20px; line-height: 2rem;}
+            .card-title {font-size: 1.5rem; font-weight: bold; margin-top: 20px; margin-bottom: 10px; color: #222222;}
+            .card-text {font-size: 1rem; color: #555555; line-height: 1.5; padding: 10px; background-color: #eeeeee; border-radius: 10px;}
+            .card-body {padding-top: 0px !important;  }
+            /* ----- Desktop View ----- */
+            .timeline-shad {width: 50%; height: 100%; position: relative;}
+            /* Circle at the end */
+            .timeline-shad::after {
+                content: "";
+                position: absolute;
+                bottom: 0; /* put it at the end */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;  /* circle size */
+                height: 20px;
+                background-color: white;
+                border-radius: 50%;
+            }
+            .hidden-desktop {display: none;}
+            /* ----- Mobile View ----- */
+            .year-overlay-shad { color: #222222; display: none; position: sticky; top: 70px; width: 40%; border-radius: 8px; margin: auto; background: rgba(255,255,255,0.8); border: 1px solid #dddddd; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; padding: 20px; font-size: 3rem; font-weight: 800; z-index: 50;}
+            /* ----- Mobile View ----- */
+            @media (max-width: 768px) {
+                .hidden-desktop {display: block;}
+                .card-special .card-header {margin-top: 20px; }
+                .card-flush .card-header .cover {height: 250px; }
+                .card-special .card-header .card-title {margin-left: 40px; display: flex; flex-direction: column; text-align: right;}
+                .card-special .card-header .card-title .title {font-size: 2rem; line-height: 2.3rem; text-align: right;}
+                .card-special .card-header .card-title .message {font-size: 1rem; line-height: 1.2rem; text-align: right;}
+                .container-shad {
+                    display: block;
+                }
+                .timeline-shad {
+                    display: none;
+                }
+                .cards {
+                    padding: 20px;
+                }
+                .year-overlay-shad {
+                    display: block;
+                }
+                section {
+                    padding: 20px 0;
+                }
+                .cards {
+                    position: relative;
+                }
+
+                .cards::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 20px;
+                    width: 2px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: repeating-linear-gradient(
+                        to bottom,
+                        #ccc,
+                        #ccc 2px,
+                        transparent 2px,
+                        transparent 10px
+                    );
+                    z-index: 0;
+                }
+
+                .card {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .year-section-shad .year-end {
+                    bottom: 0; position:absolute; 
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: #222222; width: 40%; border-radius: 8px; margin: auto; margin-top: 20px; background: white; border: 1px solid #dddddd; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; padding: 20px; font-size: 3rem; font-weight: 800; z-index: 50;
+                }
+            }
+
+            .img-modal {
+                display: none; /* Hidden by default */
+                position: fixed; 
+                z-index: 9999; /* On top */
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5); /* Black with 0.5 opacity */
+                overflow: auto;
+                cursor: zoom-out;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 90%;
+                box-shadow: 0 0 15px rgba(0,0,0,0.7);
+                border-radius: 8px;
+                cursor: zoom-out;
+            }
+
+            .close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: white;
+                font-size: 40px;
+                font-weight: bold;
+                cursor: pointer;
+                user-select: none;
+                z-index: 10000;
+            }
+        </style>
+        </head>
+    <body>
+        <!-- start header -->
+        <header>
+            <!-- start navigation -->
+            <nav class="navbar navbar-default bootsnav navbar-top white-link header-dark background-black nav-box-width navbar-expand-lg">    
+                <div class="container-fluid nav-header-container">
+                    <!-- start logo -->
+                    <div class="col-auto col-lg-2 ps-0">
+                        <a href="index.html" title="Farras Majid" class="logo"><img src="images/_shadalkane/logo.png" data-at2x="images/_shadalkane/logo@2x.png" class="logo-dark" alt="Pofo"><img src="images/_shadalkane/logo-white.png" data-at2x="images/_shadalkane/logo-white@2x.png" alt="Pofo" class="logo-light default"></a>
+                    </div>
+                    <!-- end logo -->
+                    <div class="col accordion-menu pr-0 pr-md-3">
+                        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle-1">
+                            <span class="sr-only">toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
+                            <ul class="nav navbar-nav alt-font text-normal">
+                                <!-- start menu item -->
+                                <li><a href="javascript:;" class="inner-link" data-filter="All">All</a></li>
+                                <!-- end menu item -->
+                                <!-- start menu item -->
+                                <li><a href="javascript:;" class="inner-link" data-filter="Career">Career</a></li>
+                                <!-- end menu item -->
+                                <!-- start menu item -->
+                                <li><a href="javascript:;" class="inner-link" data-filter="Projects">Projects</a></li>
+                                <!-- end menu item -->
+                                 <!-- start menu item -->
+                                <li><a href="javascript:;" class="inner-link" data-filter="Skills">Skills</a></li>
+                                <!-- end menu item -->
+                                <!-- start menu item -->
+                                <li><a href="javascript:;" class="inner-link" data-filter="Certification">Certification & Training</a></li>
+                                <!-- end menu item -->
+                                <!-- start menu item -->
+                                <li><a href="index.html" class="inner-link">Back to Swipe!</a></li>
+                                <!-- end menu item -->
+                                <!-- start menu item -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto col-lg-2 pe-0 text-end">
+                    </div>
+                </div>
+            </nav>
+            <!-- end navigation -->  
+        </header>
+        <!-- end header -->
+        <div class="container-shad">
+            <aside class="timeline-shad">
+                <section class="year-block-shad" data-year="2025">
+                    <div class="year-label-shad">2025</div>
+                </section>
+                <section class="year-block-shad" data-year="2024">
+                    <div class="year-label-shad">2024</div>
+                </section>
+                <section class="year-block-shad" data-year="2023">
+                    <div class="year-label-shad">2023</div>
+                </section>
+                <section class="year-block-shad" data-year="2022">
+                    <div class="year-label-shad">2022</div>
+                </section>
+                <section class="year-block-shad" data-year="2021">
+                    <div class="year-label-shad">2021</div>
+                </section>
+                <section class="year-block-shad" data-year="2020">
+                    <div class="year-label-shad">2020</div>
+                </section>
+                <section class="year-block-shad" data-year="2019">
+                    <div class="year-label-shad">2019</div>
+                </section>
+                <section class="year-block-shad" data-year="2018">
+                    <div class="year-label-shad">2018</div>
+                </section>
+                <section class="year-block-shad" data-year="2017">
+                    <div class="year-label-shad">2017</div>
+                </section>
+                <section class="year-block-shad" data-year="2016">
+                    <div class="year-label-shad">2016</div>
+                </section>
+                <section class="year-block-shad" data-year="2015">
+                    <div class="year-label-shad">2015</div>
+                </section>
+            </aside>
+            <main class="cards">
+                <div class="year-overlay-shad">2025</div>
+                <section class="year-section-shad" data-year="2025">
+                    <div class="card-special card" data-category="">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/farras-majid.jpg" alt="Farras Majid" class="cover icon-special">
+                            <div class="card-title"><div class="title">Halo! Selamat Datang!</div><div class="message">Selamat berkunjung!</div></div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/finance-oneflux/finance-oneflux-3.png" alt="Finance OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Agustus 2025</span> - Finance OneFlux v2.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Finance OneFlux v2.0 untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Certification">
+                        <div class="card-header">
+                            <img src="images/certification/sap.jpeg" alt="SAP" class="cover cover-center">
+                            <div class="card-title"><span class="text-muted">Mei 2025</span> - Certification: Intermediate ABAP Programming</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Pelatihan bahasa pemrograman ABAP untuk development SAP dari pengelola pelatihan Trainocate.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/clickhouse.svg" alt="ClickHouse" class="icon">
+                            <div class="card-title"><span class="text-muted">Maret 2025</span> - Skill: ClickHouse</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan Clickhouse dalam penyimpanan big data Mitratel.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/airflow.png" alt="Airflow" class="icon">
+                            <div class="card-title"><span class="text-muted">Maret 2025</span> - Skill: Apache AirFlow</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan Apache AirFlow dalam proses pipeline ETL dalam lingkup DataWareHouse.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/it-oneflux/it-oneflux-4.png" alt="IT OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Maret 2025</span> - IT OneFlux v2.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack IT OneFlux v2.0 untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/pmo-oneflux/pmo-oneflux-1.png" alt="PMO OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Februari 2025</span> - PMO OneFlux v2.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack PMO OneFlux v2.0 untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/jira.png" alt="Jira" class="icon">
+                            <div class="card-title"><span class="text-muted">Januari 2025</span> - Skill: Jira</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan jira dalam tracking aktivitas harian, management timeline, dan koordinasi dengan sesama tim IT.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/sonarqube.svg" alt="Sonarqube" class="icon">
+                            <div class="card-title"><span class="text-muted">Januari 2025</span> - Skill: Docker</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan sonarqube dalam scanning vulnerabilities baik di dalam source code maupun di dalam sistem.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/docker.png" alt="Docker" class="icon">
+                            <div class="card-title"><span class="text-muted">Januari 2025</span> - Skill: Docker</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan docker dalam penggunaan deployment aplikasi dengan menggunakan basis container.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/jenkins.png" alt="Jenkins" class="icon">
+                            <div class="card-title"><span class="text-muted">Januari 2025</span> - Skill: Jenkins</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan Jenkins sebagai pipeline CI/CD dalam development agile.</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2024</div>
+                </section>
+                <section class="year-section-shad" data-year="2024">
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/hcm-oneflux/hcm-oneflux-1.png" alt="HCM OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Desember 2024</span> - HCM OneFlux v2.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack HCM OneFlux v2.0 untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/tracking-spmk/tracking-spmk-1.png" alt="Tracking SPMK" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">November 2024</span> - Tracking SPMK</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Tracking SPMK untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Certification">
+                        <div class="card-header">
+                            <img src="images/certification/top-learners.jpeg" alt="Top Learners" class="cover cover-center">
+                            <div class="card-title"><span class="text-muted">Oktober 2024</span> - Certification: Top Learners Google Career </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Penghargaan dari Google Career Certification x Telkom sebagai Top Learners 2024.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/dashboard-bbws/dashboard-bbws-1.png" alt="Dashboard BBWS" class="cover cover-right">
+                            <div class="card-title"><span class="text-muted">September 2024</span> - Dashboard BBWS</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Dashboard BBWS untuk kebutuhan unit BBWS Brantas dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/finance-pst/finance-pst.png" alt="Finance PST" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">September 2024</span> - Finance PST</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Finance PST untuk kebutuhan unit PST dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/finance-oneflux/finance-oneflux-1.png" alt="Finance OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Juni 2024</span> - Finance OneFlux</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Finance OneFlux untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/aspirasi/aspirasi-1.png" alt="Aspirasi" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Juni 2024</span> - Talent Scouting</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Talent Scouting untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2023</div>
+                </section>
+                <section class="year-section-shad" data-year="2023">
+                    <div class="card card-flush" data-category="Certification">
+                        <div class="card-header">
+                            <img src="images/certification/secure-development.png" alt="Secure Development" class="cover cover-center">
+                            <div class="card-title"><span class="text-muted">Agustus 2023</span> - Certification: Secure Development Life Cycle</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Sertifikasi pelatihan Secure Development Life Cycle dari pengelola pelatihan Cyber Academy.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/pmo-oneflux/pmo-1.png" alt="PMO OneFlux" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">September 2023</span> - PMO OneFlux v1.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack PMO OneFlux untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/corsec-oneflux/corsec-oneflux-1.png" alt="Corsec OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">September 2023</span> - Corsec OneFlux v1.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Corsec OneFlux untuk kebutuhan unit Corsec dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/transport-management/transport-management-1.png" alt="Transport Management" class="cover cover-center">
+                            <div class="card-title"><span class="text-muted">September 2023</span> - Transport Management</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi mobile Transport Management untuk kebutuhan unit Corsec dengan menggunakan stack Flutter dan Laravel.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/icons/flutter.png" alt="Flutter" class="icon">
+                            <div class="card-title"><span class="text-muted">September 2023</span> - Skill: Flutter</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian bahasa pemrograman Flutter untuk development Mobile android dan ios development</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Certification">
+                        <div class="card-header">
+                            <img src="images/certification/flutter-and-dart.png" alt="Flutter and Dart" class="cover cover-center">
+                            <div class="card-title"><span class="text-muted">Agustus 2023</span> - Certification: Flutter and Dart</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Sertifikasi pelatihan Flutter dan Dart dari pengelola pelatihan Udemy.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/it-oneflux/it-oneflux-1.png" alt="IT OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Agustus 2023</span> - IT OneFlux v1.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack IT OneFlux untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/gopro/gopro-1.png" alt="Gopro" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Juli 2023</span> - Gopro</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Gopro untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/dashboard-construction/dashboard-construction-1.png" alt="Dashboard Construction" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Maret 2023</span> - Dashboard Construction</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Dashboard Construction untuk kebutuhan unit Construction dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2022</div>
+                </section>
+                <section class="year-section-shad" data-year="2022">
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/cme/cme-1.png" alt="CME" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">November 2022</span> - CME</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Absensi CME untuk kebutuhan unit Manage Service dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/catalyst/catalyst-1.png" alt="Catalyst" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">September 2022</span> - Catalyst</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Catalyst untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/mesop/mesop-1.png" alt="Mesop" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">September 2022</span> - MESOP Mitratel</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Mesop Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/hcm-oneflux/hcm-1.png" alt="HCM OneFlux" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Juli 2022</span> - HCM OneFlux v1.0</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack HCM OneFlux untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/figma.png" alt="Figma" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2022</span> - Skill: Figma</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai penggunaan Figma untuk kolaborasi pembuatan dan desain mockup aplikasi.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/karir/karir-1.png" alt="Karir" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Mei 2022</span> - Karir Mitratel</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Karir Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/absensi-radir/absensi-radir-1.png" alt="Absensi Radir" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Maret 2022</span> - Absensi Radir</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Absensi Radir untuk kebutuhan unit Corporate Office dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2021</div>
+                </section>
+                <section class="year-section-shad" data-year="2021">
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/dashboard-ipo/dashboard-ipo-1.png" alt="Dashboard IPO" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Agustus 2021</span> - Dashboard IPO</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Dashboard IPO untuk kebutuhan IPO Mitratel dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/pentaho.webp" alt="Pentaho" class="icon">
+                            <div class="card-title"><span class="text-muted">Maret 2021</span> - Skill: Pentaho</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian penggunaan aplikasi Pentaho untuk ETL DataWareHouse.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Career">
+                        <div class="card-header">
+                            <img src="images/career/career4.png" alt="Career4" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Januari 2021</span> - Officer 2 IT Apps Development & System Analyst</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Promosi sebagai officer 2 IT Apps Development & System Analyst. Menghandle inhouse app development (web dan mobile apps) dan datawarehouse di Mitratel.</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2020</div>
+                </section>
+                <section class="year-section-shad" data-year="2020">
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/tania/tania-1.png" alt="Tania" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Desember 2020</span> - Tania</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Tania untuk kebutuhan mitra PT GEAF dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/pmo-oneflux/womtools-1.png" alt="WOMTools" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Agustus 2020</span> - WOMTools</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack WOMTools untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/laravel.png" alt="Laravel" class="icon">
+                            <div class="card-title"><span class="text-muted">Juli 2020</span> - Skill: Laravel</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai development aplikasi PHP dengan menggunakan framework Laravel.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/react.webp" alt="React Native" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2020</span> - Skill: React Native</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai penggunaan framework React Native untuk development frontend aplikasi mobile.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/node.webp" alt="Node" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2020</span> - Skill: Node</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai penggunaan framework NodeJS untuk development backend aplikasi mobile.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/presensi/presensi.jpg" alt="Presensi" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Maret 2020</span> - Replika (Request Aplikasi)</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Replika (Request Aplikasi) untuk kebutuhan unit IT dengan menggunakan stack Codeigniter, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/codeigniter.png" alt="Codeigniter" class="icon">
+                            <div class="card-title"><span class="text-muted">Februari 2020</span> - Skill: Codeigniter</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai development aplikasi PHP dengan menggunakan framework Codeigniter.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/douglas/douglas-1.png" alt="Douglas" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Februari 2020</span> - Douglas</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Douglas untuk kebutuhan unit Legal dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/presensi/presensi.jpg" alt="Comando" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Januari 2020</span> - Comando</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Comando untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2019</div>
+                </section>
+                <section class="year-section-shad" data-year="2019">
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/pmo-oneflux/kmonline-1.png" alt="KM Online" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">November 2019</span> - KM Online</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack KM Online untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/github.png" alt="GitHub" class="icon">
+                            <div class="card-title"><span class="text-muted">Oktober 2019</span> - Skill: Git</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai pengelolaan source code di repository git terutama di GitHub.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/sdm/sdm-1.png" alt="SDM" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">September 2019</span> - Absensi dan Overtime SDM</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Absensi dan Overtime untuk karyawan outsource di SDM dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/pmo-oneflux/motor-1.png" alt="Motor" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Juni 2019</span> - Motor (Monitoring Radir)</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Motor (Monitoring Radir) untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2018</div>
+                </section>
+                <section class="year-section-shad" data-year="2018">
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/presensi/presensi.jpg" alt="Presensi" class="cover cover-right">
+                            <div class="card-title"><span class="text-muted">Agustus 2018</span> - Absensi dan Overtime</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat aplikasi full stack Absensi dan Overtime untuk kebutuhan karyawan Mitratel dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/linux.png" alt="Linux" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: Linux-Based Server</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai pengelolaan server berbasis linus, terutama pada versi Centos, Almalinux, dan Ubuntu.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/postgresql.png" alt="PostgreSQL" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: PostgreSQL</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian database dan query PostgreSQL sebagai penyimpanan data dari aplikasi web.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/mysql.svg" alt="MySQL" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: MySQL</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian database dan query MySQL sebagai penyimpanan data dari aplikasi web.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/javascript.png" alt="Javascript" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: JS</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian bahasa aplikasi javascrit untuk membuat backend aplikasi web.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/css.png" alt="CSS" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: CSS</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian styling web CSS untuk membuat tampilan aplikasi web.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/html5.png" alt="HTML5" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: HTML5</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian markup language HTML5 untuk membuat aplikasi web.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/php.svg" alt="PHP" class="icon">
+                            <div class="card-title"><span class="text-muted">Mei 2018</span> - Skill: PHP</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian development PHP untuk membuat aplikasi web dengan web server Apache.</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Career">
+                        <div class="card-header">
+                            <img src="images/career/career3.png" alt="Career3" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">April 2018</span> - Officer 3 IT Development</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Mutasi ke unit Information & Technology di Mitratel sebagai Officer 3 IT Development. Memegang web development aplikasi baru dari request kebutuhan unit-unit di Mitratel.</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2017</div>
+                </section>
+                <section class="year-section-shad" data-year="2017">
+                    <div class="card card-flush" data-category="Career">
+                        <div class="card-header">
+                            <img src="images/career/career2.jpg" alt="Career2" class="cover cover-bottom">
+                            <div class="card-title"><span class="text-muted">Februari 2017</span> - Staff Planning PSC B2S</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Mulai kerja sebagai staff planning PSC B2S. Menghandle data performansi dan achievement unit B2S di Mitratel (Construction & Sales).</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2016</div>
+                </section>
+                <section class="year-section-shad" data-year="2016">
+                    <div class="card card-flush" data-category="Career">
+                        <div class="card-header">
+                            <img src="images/career/career1.jpg" alt="Career1" class="cover cover-top">
+                            <div class="card-title"><span class="text-muted">Oktober 2016</span> - Great People Training Program I Mitratel</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Mengikuti program training karyawan tetap PT Dayamitra Telekomunikasi dengan jangka waktu 4 bulan (Oktober 2015 - Januari 2016).</div>
+                        </div>
+                    </div>
+                    <div class="year-end hidden-desktop">2015</div>
+                </section>
+                <section class="year-section-shad" data-year="2015">
+                    <div class="card card-flush" data-category="Career">
+                        <div class="card-header">
+                            <img src="images/career/college1.jpg" alt="College1" class="cover cover-top">
+                            <div class="card-title"><span class="text-muted">Oktober 2015</span> - Wisuda Oktober Institut Teknologi Bandung</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Lulus pada bulan Oktober 2015 dari Institut Teknologi Bandung jurusan Teknik Elektro dengan gelar Sarjana Teknik (S.T.)</div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Skills">
+                        <div class="card-header">
+                            <img src="images/icons/photoshop.png" alt="Photoshop" class="icon">
+                            <div class="card-title"><span class="text-muted">Oktober 2015</span> - Skill: Photoshop</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Menguasai keahlian Adobe Photoshop dengan berbagai projects yang dihasilkan dari kegiatan kuliah di ITB.</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div id="imgModal" class="img-modal">
+            <span class="close">&times;</span>
+            <img class="img-modal-content" id="imgZoomed" />
+        </div>
+        <footer class="footer-modern-dark bg-extra-dark-gray padding-five-tb sm-padding-30px-tb">
+            <div class="footer-widget-area padding-40px-bottom sm-padding-30px-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- start slogan -->
+                        <div class="col-lg-4 text-center text-md-start md-margin-three-bottom sm-margin-20px-bottom">
+                            <h6 class="text-dark-gray w-70 lg-w-100 no-margin-bottom">I'm currently working at PT Dayamitra Telekomunikasi Tbk</h6>
+                        </div>
+                        <!-- end slogan -->
+                        <!-- start contact information -->
+                        <div class="col-lg-4 col-md-6 text-center text-md-start sm-margin-20px-bottom">
+                            <span class="d-block">Telkom Landmark Tower, Lantai 25-27<br>Jl. Gatot Subroto Kav. 52 Jakarta, 12710, Indonesia</span>
+                            <a href="mailto:muhammad.farras@mitratel.co.id" title="sales@domain.com">muhammad.farras@mitratel.co.id</a>   |   +62 821 1546 4605
+                        </div>
+                        <!-- end contact information -->
+                        <!-- start social media -->
+                        <div class="col-lg-4 col-md-6 social-style-2 text-center text-md-start">
+                            <a href="index.html"><img class="footer-logo" src="images/_shadalkane/logo-white.png" data-at2x="images/_shadalkane/logo-white@2x.png" alt="Pofo"></a>
+                            <div class="social-icon-style-8">
+                                <ul class="text-extra-small margin-20px-top sm-no-margin-bottom text-uppercase p-0 mb-0 list-unstyled">
+                                    <li class="d-inline-block margin-10px-right"><a href="https://www.instagram.com/mfarrasmajid" target="_blank" title="Instagram">Instagram</a></li>
+                                    <li class="d-inline-block"><a href="https://www.linkedin.com/in/m-farras-majid-79804060/" target="_blank" title="Dribbble">LinkedIn</a></li>                                                              
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end social media -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- start scroll to top -->
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
+        <!-- end scroll to top  -->
+        <!-- javascript -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootsnav.js"></script>
+        <script type="text/javascript" src="js/jquery.nav.js"></script>
+        <script type="text/javascript" src="js/hamburger-menu.js"></script>
+        <script type="text/javascript" src="js/theme-vendors.min.js"></script>
+        <!-- setting -->
+        <script type="text/javascript" src="js/main.js"></script>
+        <script>
+            function adjustYearBlockHeights() {
+                document.querySelectorAll(".year-section-shad").forEach(section => {
+                    const year = section.getAttribute("data-year");
+                    const yearBlock = document.querySelector(`.year-block-shad[data-year="${year}"]`);
+                    if (yearBlock) {
+                    // reset height so it can shrink if needed
+                    yearBlock.style.height = 'auto';
+                    // set height to match section height
+                    yearBlock.style.height = section.offsetHeight + "px";
+                    }
+                });
+            }
+
+            const filterButtons = document.querySelectorAll(".navbar .inner-link");
+            const cards = document.querySelectorAll(".card");
+
+            // Handle filtering
+            filterButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const filter = button.getAttribute("data-filter");
+
+                    // Highlight active filter
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+
+                    // Show/hide cards
+                    cards.forEach((card, index) => {
+                        const category = card.getAttribute("data-category");
+                        if (filter === 'All' || category === filter) {
+                            setTimeout(() => {
+                            card.classList.remove('hide');
+                            card.classList.add('show');
+                            if (index === cards.length - 1) {
+                                adjustYearBlockHeights();
+                            }
+                            }, index * 100);
+                        } else {
+                            setTimeout(() => {
+                            card.classList.remove('show');
+                            card.classList.add('hide');
+                            if (index === cards.length - 1) {
+                                adjustYearBlockHeights();
+                            }
+                            }, index * 100);
+                        }
+                    });
+                });
+            });
+            
+            const overlay = document.querySelector('.year-overlay-shad');
+            const sections = document.querySelectorAll('.year-section-shad');
+
+            function updateOverlayYear() {
+                let currentYear = overlay.textContent;
+                let minDistance = window.innerHeight - 600;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.top < minDistance) {
+                        minDistance = rect.top;
+                        currentYear = section.dataset.year;
+                    }
+                });
+
+                overlay.textContent = currentYear;
+            }
+            window.addEventListener('scroll', () => {
+                if (window.innerWidth <= 768) {
+                    updateOverlayYear();
+                }
+            });
+            updateOverlayYear();
+
+            // Select all images inside your cards with class "icon"
+            const images = document.querySelectorAll('.card .cover');
+            const modal = document.getElementById('imgModal');
+            const modalImg = document.getElementById('imgZoomed');
+            const closeBtn = modal.querySelector('.close');
+
+            images.forEach(img => {
+                img.style.cursor = 'zoom-in'; // change cursor to hint zoom
+                img.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                });
+
+                // Close modal if clicked outside the image
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target === modalImg) {
+                    modal.style.display = 'none';
+                }
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                // Get all year sections
+                adjustYearBlockHeights();
+            });
+        </script>
+    </body>
+</html>

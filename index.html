@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- title -->
+    <title>Farras Majid - Welcome</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="author" content="ShadAlkane">
+    <!-- description -->
+    <meta name="description" content="Welcome to my website, feel free to browse.">
+    <!-- keywords -->
+    <meta name="keywords" content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, coming soon, faq">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/_shadalkane/icon.png">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
+    <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
+      @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+      html {font-size: 15px;}
+      body {font-family: 'Roboto', sans-serif; -webkit-font-smoothing: antialiased; font-size:14px; color:#6f6f6f; font-weight: 400;}
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #222222;
+        margin: 0;
+      }
+
+      #card-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        margin: auto;
+        overflow: hidden;
+        background: #222222;
+        border-radius: 10px;
+      }
+
+      .card {
+        touch-action: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center center;
+        width: 500px;
+        aspect-ratio: 3/4;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        overflow: hidden;
+        cursor: grab;
+        user-select: none;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .card.show {
+        opacity: 1;
+      }
+      
+      .containercustom {
+        position: relative;
+        display: inline-block;
+      }
+      .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 200px; /* adjust size */
+        height: auto;
+        z-index: 10;
+      }
+      .link-text {
+        position: absolute;
+        bottom: 110px;
+        right: 10px;
+        padding: 4px 8px;
+        color: #fafafa;
+        font-weight: 500;
+        font-size: 15px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 4px;
+      }
+
+      .cover-top, .cover-bottom, .cover-left, .cover-right, .cover-center {border: 10px solid #aaaaaa; width: 100%; height: 400px; border-radius: 10px; object-fit: cover;}
+      .cover-top { object-position: center top;}
+      .cover-bottom {object-position: center bottom;}
+      .cover-left {object-position: center left;}
+      .cover-right {object-position: center right;}
+      .cover-center {object-position: center center;}
+      .icon {width: 200px; text-align: center; margin-top: 100px; margin-bottom: 100px; border: 0px;}
+      .card-title {font-size: 1.5rem; font-weight: bold; margin-top: 20px; margin-bottom: 10px; color: #222222;}
+      .card-text {font-size: 1rem; color: #888888; line-height: 1.5; padding: 10px; background-color: #eeeeee; border-radius: 10px;}
+      .card-body {padding-top: 0px !important;  }
+      .card-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* horizontal center */
+        align-items: center;     /* vertical center (jika tinggi fixed) */
+        gap: 10px;               /* jarak antara gambar dan teks, opsional */
+        flex-wrap: wrap;         /* biar responsif, opsional */
+        border-bottom: 0px !important;
+      }
+      
+        @media (max-width: 768px) {
+          .cover-top, .cover-bottom, .cover-left, .cover-right, .cover-center { height: 150px;}
+          .icon {width: 130px; text-align: center; margin-top: 10px; margin-bottom: 10px; border: 0px;}
+          .card {
+                width: 70%;
+                font-size: 1rem;
+          }
+          .card-title {font-size: 1rem;}
+          .card-text {font-size: 0.8rem;}
+        }
+    </style>
+</head>
+<body>
+  <div class="containercustom">
+    <img src="images/_shadalkane/logo-white.png" alt="Logo" class="logo" />
+    <a href="profile.html" class="link-text">Lihat Semua >></a>
+    <div id="card-container"></div>
+    <div id="progress-bar-container" style="position:absolute; bottom: 50px; left: 20px; right: 20px; width: calc(100% - 40px);">
+      <div id="progress-bar" style="height: 20px; background: #444; border-radius: 10px; overflow: hidden;">
+        <div id="progress-bar-fill" style="height: 100%; width: 0; background: #be4343; transition: width 0.3s;"></div>
+      </div>
+      <div id="progress-bar-text" style="color: #fafafa; margin-top: 5px; font-size: 15px; text-align: right;"></div>
+    </div>
+  </div>
+
+<script>
+let totalCards = 0;
+const shownCardIndexes = new Set();
+
+const container = document.getElementById("card-container");
+
+function getRandomPosition(container) {
+  const containerRect = container.getBoundingClientRect();
+  const maxX = containerRect.width - 150; // card width offset
+  const maxY = containerRect.height - 200; // card height offset
+  return {
+    x: Math.random() * maxX,
+    y: Math.random() * maxY
+  };
+}
+
+function createCard({ imgSrc, altText, date, title, description, classs}, delay, cardIndex) {
+  const card = document.createElement("div");
+  card.className = "card card-flush";
+  card.setAttribute("data-category", "Projects");
+
+  card.innerHTML = `
+    <div class="card-header">
+      <img src="${imgSrc}" alt="${altText}" class="${classs}">
+      <div class="card-title"><span class="text-muted">${date}</span> - ${title}</div>
+    </div>
+    <div class="card-body">
+      <div class="card-text">${description}</div>
+    </div>
+  `;
+
+  // Random scatter rotation and offset
+  const baseAngle = (Math.random() * 50) - 25;
+  const baseOffsetX = (Math.random() * 100) - 50;
+  const baseOffsetY = (Math.random() * 100) - 50;
+
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+    // const pos = getRandomPosition(container);
+    // card.style.left = `${pos.x}px`;
+    // card.style.top = `${pos.y}px`;
+
+  // Initial placement (hidden, smaller scale)
+  card.style.transform = `translate(-50%, -50%) translate(${baseOffsetX}px, ${baseOffsetY}px) rotate(${baseAngle}deg) scale(0.9)`;
+  container.appendChild(card);
+
+  // Delay fade-in
+  setTimeout(() => {
+    card.classList.add("show");
+    shownCardIndexes.add(cardIndex);
+    updateProgressBar();
+    card.style.transform = `translate(-50%, -50%) translate(${baseOffsetX}px, ${baseOffsetY}px) rotate(${baseAngle}deg) scale(1)`;
+  }, delay);
+
+  // Drag logic
+  card.addEventListener("pointerdown", (e) => {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    card.setPointerCapture(e.pointerId);
+    card.style.transition = "none";
+  });
+
+  card.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    card.style.transform =
+      `translate(-50%, -50%) translate(${baseOffsetX + currentX}px, ${baseOffsetY + currentY}px) rotate(${baseAngle + currentX / 20}deg)`;
+  });
+
+  card.addEventListener("pointerup", (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    card.releasePointerCapture(e.pointerId);
+
+    // Swipe far enough → remove
+    if (Math.abs(currentX) > 100 || Math.abs(currentY) > 100) {
+      card.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+      card.style.opacity = "0";
+      card.style.transform =
+        `translate(-50%, -50%) translate(${baseOffsetX + currentX * 2}px, ${baseOffsetY + currentY * 2}px) rotate(${baseAngle + currentX / 10}deg)`;
+      setTimeout(() => {
+        card.remove();
+        checkEmpty();
+        updateProgressBar();
+      }, 300);
+    } else {
+      // Snap back
+      card.style.transition = "transform 0.3s ease";
+      card.style.transform =
+        `translate(-50%, -50%) translate(${baseOffsetX}px, ${baseOffsetY}px) rotate(${baseAngle}deg)`;
+    }
+  });
+}
+
+
+
+function updateProgressBar() {
+  const shown = shownCardIndexes.size;
+  const percent = totalCards === 0 ? 0 : (shown / totalCards) * 100;
+  document.getElementById('progress-bar-fill').style.width = percent + "%";
+  document.getElementById('progress-bar-text').textContent = `${shown} / ${totalCards} cards shown`;
+}
+
+function generateCards() {
+  const projects = [
+    // 2025
+    {
+      imgSrc: "images/_shadalkane/finance-oneflux/finance-oneflux-3.png",
+      altText: "Finance OneFlux",
+      date: "Agustus 2025",
+      title: "Finance OneFlux v2.0",
+      description: "Membuat aplikasi full stack Finance OneFlux v2.0 untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/certification/sap.jpeg",
+      altText: "SAP",
+      date: "Mei 2025",
+      title: "Certification: Intermediate ABAP Programming",
+      description: "Pelatihan bahasa pemrograman ABAP untuk development SAP dari pengelola pelatihan Trainocate.",
+      classs: "cover cover-center"
+    },
+    {
+      imgSrc: "images/icons/clickhouse.svg",
+      altText: "ClickHouse",
+      date: "Maret 2025",
+      title: "Skill: ClickHouse",
+      description: "Menguasai keahlian penggunaan Clickhouse dalam penyimpanan big data Mitratel.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/airflow.png",
+      altText: "Airflow",
+      date: "Maret 2025",
+      title: "Skill: Apache AirFlow",
+      description: "Menguasai keahlian penggunaan Apache AirFlow dalam proses pipeline ETL dalam lingkup DataWareHouse.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/_shadalkane/it-oneflux/it-oneflux-4.png",
+      altText: "IT OneFlux",
+      date: "Maret 2025",
+      title: "IT OneFlux v2.0",
+      description: "Membuat aplikasi full stack IT OneFlux v2.0 untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/pmo-oneflux/pmo-oneflux-1.png",
+      altText: "PMO OneFlux",
+      date: "Februari 2025",
+      title: "PMO OneFlux v2.0",
+      description: "Membuat aplikasi full stack PMO OneFlux v2.0 untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/icons/jira.png",
+      altText: "Jira",
+      date: "Januari 2025",
+      title: "Skill: Jira",
+      description: "Menguasai keahlian penggunaan jira dalam tracking aktivitas harian, management timeline, dan koordinasi dengan sesama tim IT.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/sonarqube.svg",
+      altText: "Sonarqube",
+      date: "Januari 2025",
+      title: "Skill: Docker",
+      description: "Menguasai keahlian penggunaan sonarqube dalam scanning vulnerabilities baik di dalam source code maupun di dalam sistem.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/docker.png",
+      altText: "Docker",
+      date: "Januari 2025",
+      title: "Skill: Docker",
+      description: "Menguasai keahlian penggunaan docker dalam penggunaan deployment aplikasi dengan menggunakan basis container.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/jenkins.png",
+      altText: "Jenkins",
+      date: "Januari 2025",
+      title: "Skill: Jenkins",
+      description: "Menguasai keahlian penggunaan Jenkins sebagai pipeline CI/CD dalam development agile.",
+      classs: "icon"
+    },
+    // 2024
+    {
+      imgSrc: "images/_shadalkane/hcm-oneflux/hcm-oneflux-1.png",
+      altText: "HCM OneFlux",
+      date: "Desember 2024",
+      title: "HCM OneFlux v2.0",
+      description: "Membuat aplikasi full stack HCM OneFlux v2.0 untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/tracking-spmk/tracking-spmk-1.png",
+      altText: "Tracking SPMK",
+      date: "November 2024",
+      title: "Tracking SPMK",
+      description: "Membuat aplikasi full stack Tracking SPMK untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/certification/top-learners.jpeg",
+      altText: "Top Learners",
+      date: "Oktober 2024",
+      title: "Certification: Top Learners Google Career",
+      description: "Penghargaan dari Google Career Certification x Telkom sebagai Top Learners 2024.",
+      classs: "cover cover-center"
+    },
+    {
+      imgSrc: "images/_shadalkane/dashboard-bbws/dashboard-bbws-1.png",
+      altText: "Dashboard BBWS",
+      date: "September 2024",
+      title: "Dashboard BBWS",
+      description: "Membuat aplikasi full stack Dashboard BBWS untuk kebutuhan unit BBWS Brantas dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-right"
+    },
+    {
+      imgSrc: "images/_shadalkane/finance-pst/finance-pst.png",
+      altText: "Finance PST",
+      date: "September 2024",
+      title: "Finance PST",
+      description: "Membuat aplikasi full stack Finance PST untuk kebutuhan unit PST dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/finance-oneflux/finance-oneflux-1.png",
+      altText: "Finance OneFlux",
+      date: "Juni 2024",
+      title: "Finance OneFlux",
+      description: "Membuat aplikasi full stack Finance OneFlux untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/aspirasi/aspirasi-1.png",
+      altText: "Aspirasi",
+      date: "Juni 2024",
+      title: "Talent Scouting",
+      description: "Membuat aplikasi full stack Talent Scouting untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    // 2023
+    {
+      imgSrc: "images/certification/secure-development.png",
+      altText: "Secure Development",
+      date: "Agustus 2023",
+      title: "Certification: Secure Development Life Cycle",
+      description: "Sertifikasi pelatihan Secure Development Life Cycle dari pengelola pelatihan Cyber Academy.",
+      classs: "cover cover-center"
+    },
+    {
+      imgSrc: "images/_shadalkane/pmo-oneflux/pmo-1.png",
+      altText: "PMO OneFlux",
+      date: "September 2023",
+      title: "PMO OneFlux v1.0",
+      description: "Membuat aplikasi full stack PMO OneFlux untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/_shadalkane/corsec-oneflux/corsec-oneflux-1.png",
+      altText: "Corsec OneFlux",
+      date: "September 2023",
+      title: "Corsec OneFlux v1.0",
+      description: "Membuat aplikasi full stack Corsec OneFlux untuk kebutuhan unit Corsec dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/transport-management/transport-management-1.png",
+      altText: "Transport Management",
+      date: "September 2023",
+      title: "Transport Management",
+      description: "Membuat aplikasi mobile Transport Management untuk kebutuhan unit Corsec dengan menggunakan stack Flutter dan Laravel.",
+      classs: "cover cover-center"
+    },
+    {
+      imgSrc: "images/icons/flutter.png",
+      altText: "Flutter",
+      date: "September 2023",
+      title: "Skill: Flutter",
+      description: "Menguasai keahlian bahasa pemrograman Flutter untuk development Mobile android dan ios development",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/certification/flutter-and-dart.png",
+      altText: "Flutter and Dart",
+      date: "Agustus 2023",
+      title: "Certification: Flutter and Dart",
+      description: "Sertifikasi pelatihan Flutter dan Dart dari pengelola pelatihan Udemy.",
+      classs: "cover cover-center"
+    },
+    {
+      imgSrc: "images/_shadalkane/it-oneflux/it-oneflux-1.png",
+      altText: "IT OneFlux",
+      date: "Agustus 2023",
+      title: "IT OneFlux v1.0",
+      description: "Membuat aplikasi full stack IT OneFlux untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/gopro/gopro-1.png",
+      altText: "Gopro",
+      date: "Juli 2023",
+      title: "Gopro",
+      description: "Membuat aplikasi full stack Gopro untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/dashboard-construction/dashboard-construction-1.png",
+      altText: "Dashboard Construction",
+      date: "Maret 2023",
+      title: "Dashboard Construction",
+      description: "Membuat aplikasi full stack Dashboard Construction untuk kebutuhan unit Construction dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    // 2022
+    {
+      imgSrc: "images/_shadalkane/cme/cme-1.png",
+      altText: "CME",
+      date: "November 2022",
+      title: "CME",
+      description: "Membuat aplikasi full stack Absensi CME untuk kebutuhan unit Manage Service dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/_shadalkane/catalyst/catalyst-1.png",
+      altText: "Catalyst",
+      date: "September 2022",
+      title: "Catalyst",
+      description: "Membuat aplikasi full stack Catalyst untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/_shadalkane/mesop/mesop-1.png",
+      altText: "Mesop",
+      date: "September 2022",
+      title: "MESOP Mitratel",
+      description: "Membuat aplikasi full stack Mesop Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/hcm-oneflux/hcm-1.png",
+      altText: "HCM OneFlux",
+      date: "Juli 2022",
+      title: "HCM OneFlux v1.0",
+      description: "Membuat aplikasi full stack HCM OneFlux untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/icons/figma.png",
+      altText: "Figma",
+      date: "Mei 2022",
+      title: "Skill: Figma",
+      description: "Menguasai penggunaan Figma untuk kolaborasi pembuatan dan desain mockup aplikasi.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/_shadalkane/karir/karir-1.png",
+      altText: "Karir",
+      date: "Mei 2022",
+      title: "Karir Mitratel",
+      description: "Membuat aplikasi full stack Karir Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/_shadalkane/absensi-radir/absensi-radir-1.png",
+      altText: "Absensi Radir",
+      date: "Maret 2022",
+      title: "Absensi Radir",
+      description: "Membuat aplikasi full stack Absensi Radir untuk kebutuhan unit Corporate Office dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+      classs: "cover cover-bottom"
+    },
+    // 2021
+    {
+      imgSrc: "images/_shadalkane/dashboard-ipo/dashboard-ipo-1.png",
+      altText: "Dashboard IPO",
+      date: "Agustus 2021",
+      title: "Dashboard IPO",
+      description: "Membuat aplikasi full stack Dashboard IPO untuk kebutuhan IPO Mitratel dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/icons/pentaho.webp",
+      altText: "Pentaho",
+      date: "Maret 2021",
+      title: "Skill: Pentaho",
+      description: "Menguasai keahlian penggunaan aplikasi Pentaho untuk ETL DataWareHouse.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/career/career4.png",
+      altText: "Career4",
+      date: "Januari 2021",
+      title: "Officer 2 IT Apps Development & System Analyst",
+      description: "Promosi sebagai officer 2 IT Apps Development & System Analyst. Menghandle inhouse app development (web dan mobile apps) dan datawarehouse di Mitratel.",
+      classs: "cover cover-left"
+    },
+    // 2020
+    {
+      imgSrc: "images/_shadalkane/tania/tania-1.png",
+      altText: "Tania",
+      date: "Desember 2020",
+      title: "Tania",
+      description: "Membuat aplikasi full stack Tania untuk kebutuhan mitra PT GEAF dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/_shadalkane/pmo-oneflux/womtools-1.png",
+      altText: "WOMTools",
+      date: "Agustus 2020",
+      title: "WOMTools",
+      description: "Membuat aplikasi full stack WOMTools untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/icons/laravel.png",
+      altText: "Laravel",
+      date: "Juli 2020",
+      title: "Skill: Laravel",
+      description: "Menguasai development aplikasi PHP dengan menggunakan framework Laravel.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/react.webp",
+      altText: "React Native",
+      date: "Mei 2020",
+      title: "Skill: React Native",
+      description: "Menguasai penggunaan framework React Native untuk development frontend aplikasi mobile.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/node.webp",
+      altText: "Node",
+      date: "Mei 2020",
+      title: "Skill: Node",
+      description: "Menguasai penggunaan framework NodeJS untuk development backend aplikasi mobile.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/_shadalkane/presensi/presensi.jpg",
+      altText: "Presensi",
+      date: "Maret 2020",
+      title: "Replika (Request Aplikasi)",
+      description: "Membuat aplikasi full stack Replika (Request Aplikasi) untuk kebutuhan unit IT dengan menggunakan stack Codeigniter, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/icons/codeigniter.png",
+      altText: "Codeigniter",
+      date: "Februari 2020",
+      title: "Skill: Codeigniter",
+      description: "Menguasai development aplikasi PHP dengan menggunakan framework Codeigniter.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/_shadalkane/douglas/douglas-1.png",
+      altText: "Douglas",
+      date: "Februari 2020",
+      title: "Douglas",
+      description: "Membuat aplikasi full stack Douglas untuk kebutuhan unit Legal dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/_shadalkane/presensi/presensi.jpg",
+      altText: "Comando",
+      date: "Januari 2020",
+      title: "Comando",
+      description: "Membuat aplikasi full stack Comando untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    // 2019
+    {
+      imgSrc: "images/_shadalkane/pmo-oneflux/kmonline-1.png",
+      altText: "KM Online",
+      date: "November 2019",
+      title: "KM Online",
+      description: "Membuat aplikasi full stack KM Online untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    {
+      imgSrc: "images/icons/github.png",
+      altText: "GitHub",
+      date: "Oktober 2019",
+      title: "Skill: Git",
+      description: "Menguasai pengelolaan source code di repository git terutama di GitHub.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/_shadalkane/sdm/sdm-1.png",
+      altText: "SDM",
+      date: "September 2019",
+      title: "Absensi dan Overtime SDM",
+      description: "Membuat aplikasi full stack Absensi dan Overtime untuk karyawan outsource di SDM dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-left"
+    },
+    {
+      imgSrc: "images/_shadalkane/pmo-oneflux/motor-1.png",
+      altText: "Motor",
+      date: "Juni 2019",
+      title: "Motor (Monitoring Radir)",
+      description: "Membuat aplikasi full stack Motor (Monitoring Radir) untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-bottom"
+    },
+    // 2018
+    {
+      imgSrc: "images/_shadalkane/presensi/presensi.jpg",
+      altText: "Presensi",
+      date: "Agustus 2018",
+      title: "Absensi dan Overtime",
+      description: "Membuat aplikasi full stack Absensi dan Overtime untuk kebutuhan karyawan Mitratel dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+      classs: "cover cover-right"
+    },
+    {
+      imgSrc: "images/icons/linux.png",
+      altText: "Linux",
+      date: "Mei 2018",
+      title: "Skill: Linux-Based Server",
+      description: "Menguasai pengelolaan server berbasis linus, terutama pada versi Centos, Almalinux, dan Ubuntu.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/postgresql.png",
+      altText: "PostgreSQL",
+      date: "Mei 2018",
+      title: "Skill: PostgreSQL",
+      description: "Menguasai keahlian database dan query PostgreSQL sebagai penyimpanan data dari aplikasi web.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/mysql.svg",
+      altText: "MySQL",
+      date: "Mei 2018",
+      title: "Skill: MySQL",
+      description: "Menguasai keahlian database dan query MySQL sebagai penyimpanan data dari aplikasi web.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/javascript.png",
+      altText: "Javascript",
+      date: "Mei 2018",
+      title: "Skill: JS",
+      description: "Menguasai keahlian bahasa aplikasi javascrit untuk membuat backend aplikasi web.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/css.png",
+      altText: "CSS",
+      date: "Mei 2018",
+      title: "Skill: CSS",
+      description: "Menguasai keahlian styling web CSS untuk membuat tampilan aplikasi web.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/html5.png",
+      altText: "HTML5",
+      date: "Mei 2018",
+      title: "Skill: HTML5",
+      description: "Menguasai keahlian markup language HTML5 untuk membuat aplikasi web.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/icons/php.svg",
+      altText: "PHP",
+      date: "Mei 2018",
+      title: "Skill: PHP",
+      description: "Menguasai keahlian development PHP untuk membuat aplikasi web dengan web server Apache.",
+      classs: "icon"
+    },
+    {
+      imgSrc: "images/career/career3.png",
+      altText: "Career3",
+      date: "April 2018",
+      title: "Officer 3 IT Development",
+      description: "Mutasi ke unit Information & Technology di Mitratel sebagai Officer 3 IT Development. Memegang web development aplikasi baru dari request kebutuhan unit-unit di Mitratel.",
+      classs: "cover cover-left"
+    },
+    // 2017
+    {
+      imgSrc: "images/career/career2.jpg",
+      altText: "Career2",
+      date: "Februari 2017",
+      title: "Staff Planning PSC B2S",
+      description: "Mulai kerja sebagai staff planning PSC B2S. Menghandle data performansi dan achievement unit B2S di Mitratel (Construction & Sales).",
+      classs: "cover cover-bottom"
+    },
+    // 2016
+    {
+      imgSrc: "images/career/career1.jpg",
+      altText: "Career1",
+      date: "Oktober 2016",
+      title: "Great People Training Program I Mitratel",
+      description: "Mengikuti program training karyawan tetap PT Dayamitra Telekomunikasi dengan jangka waktu 4 bulan (Oktober 2015 - Januari 2016).",
+      classs: "cover cover-top"
+    },
+    // 2015
+    {
+      imgSrc: "images/career/college1.jpg",
+      altText: "College1",
+      date: "Oktober 2015",
+      title: "Wisuda Oktober Institut Teknologi Bandung",
+      description: "Lulus pada bulan Oktober 2015 dari Institut Teknologi Bandung jurusan Teknik Elektro dengan gelar Sarjana Teknik (S.T.)",
+      classs: "cover cover-top"
+    },
+    {
+      imgSrc: "images/icons/photoshop.png",
+      altText: "Photoshop",
+      date: "Oktober 2015",
+      title: "Skill: Photoshop",
+      description: "Menguasai keahlian Adobe Photoshop dengan berbagai projects yang dihasilkan dari kegiatan kuliah di ITB.",
+      classs: "icon"
+    }
+  ];
+
+  const selectedImages = getRandomImages(projects, 5);
+
+  totalCards = projects.length;
+
+  // Ambil index random unik
+  const allIndexes = Array.from({length: projects.length}, (_, i) => i);
+  const shuffledIndexes = allIndexes.sort(() => Math.random() - 0.5);
+  const selectedIndexes = shuffledIndexes.slice(0, 5);
+
+  selectedIndexes.forEach((cardIndex, i) => {
+    const img = projects[cardIndex];
+    createCard(img, i * 400, cardIndex);
+  });
+
+  setTimeout(updateProgressBar, 500);
+}
+
+function getRandomImages(arr, count) {
+  // Copy array agar array aslinya tidak berubah
+  const copy = arr.slice();
+  return copy.sort(() => Math.random() - 0.5).slice(0, count);
+}
+
+function checkEmpty() {
+  if (!container.querySelector(".card")) {
+    generateCards();
+  }
+}
+
+// Start
+generateCards();
+</script>
+
+</body>
+</html>
