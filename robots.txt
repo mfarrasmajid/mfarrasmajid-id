@@ -5,3 +5,4 @@ Disallow: /css/*
 Disallow: /email-templates/*
 Disallow: /fonts/*
 Disallow: /js/*
+Disallow: /bak/*

@@ -178,6 +178,27 @@
                 user-select: none;
                 z-index: 10000;
             }
+            #loadingOverlay{
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,.35);
+                display: none;         /* hidden by default */
+                align-items: center;
+                justify-content: center;
+                z-index: 99999;
+                backdrop-filter: blur(1px);
+            }
+            #loadingOverlay.show{ display:flex; }
+
+            /* simple spinner */
+            #loadingOverlay .spinner{
+                width: 48px; height: 48px;
+                border: 4px solid rgba(255,255,255,.35);
+                border-top-color: #fff;
+                border-radius: 50%;
+                animation: spin .8s linear infinite;
+            }
+            @keyframes spin{ to { transform: rotate(360deg); } }
         </style>
         </head>
     <body>
@@ -272,6 +293,15 @@
                         <div class="card-header">
                             <img src="images/_shadalkane/farras-majid.jpg" alt="Farras Majid" class="cover icon-special">
                             <div class="card-title"><div class="title">Halo! Selamat Datang!</div><div class="message">Selamat berkunjung!</div></div>
+                        </div>
+                    </div>
+                    <div class="card card-flush" data-category="Projects">
+                        <div class="card-header">
+                            <img src="images/_shadalkane/dwh-monitoring/dwh-monitoring.png" alt="DWH Monitoring" class="cover cover-left">
+                            <div class="card-title"><span class="text-muted">Oktober 2025</span> - DWH Monitoring</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">Membuat otomatisasi pipelining dari Data Source ke Datawarehouse dengan menggunakan Airflow Apache sebagai pipeline, Clickhouse sebagai Datawarehouse, dan Laravel sebagai UI.</div>
                         </div>
                     </div>
                     <div class="card card-flush" data-category="Projects">
@@ -890,7 +920,10 @@
                             <div class="social-icon-style-8">
                                 <ul class="text-extra-small margin-20px-top sm-no-margin-bottom text-uppercase p-0 mb-0 list-unstyled">
                                     <li class="d-inline-block margin-10px-right"><a href="https://www.instagram.com/mfarrasmajid" target="_blank" title="Instagram">Instagram</a></li>
-                                    <li class="d-inline-block"><a href="https://www.linkedin.com/in/m-farras-majid-79804060/" target="_blank" title="Dribbble">LinkedIn</a></li>                                                              
+                                    <li class="d-inline-block margin-10px-right"><a href="https://www.linkedin.com/in/m-farras-majid-79804060/" target="_blank" title="Dribbble">LinkedIn</a></li>                                                              
+                                    <li class="d-inline-block margin-10px-right"><a href="https://github.com/mfarrasmajid" target="_blank" title="GitHub">GitHub</a></li>                                                              
+                                    <li class="d-inline-block margin-10px-right"><a href="https://leetcode.com/u/mfarrasmajid/" target="_blank" title="LeetCode">LeetCode</a></li>                                                              
+                                    <li class="d-inline-block"><a href="https://medium.com/@m.farras.majid" target="_blank" title="Medium">Medium</a></li>                                                              
                                 </ul>
                             </div>
                         </div>
@@ -899,6 +932,9 @@
                 </div>
             </div>
         </footer>
+        <div id="loadingOverlay" aria-hidden="true">
+            <div class="spinner" aria-label="Loading"></div>
+        </div>
         <!-- start scroll to top -->
         <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
         <!-- end scroll to top  -->
@@ -912,51 +948,90 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script>
             function adjustYearBlockHeights() {
-                document.querySelectorAll(".year-section-shad").forEach(section => {
-                    const year = section.getAttribute("data-year");
-                    const yearBlock = document.querySelector(`.year-block-shad[data-year="${year}"]`);
-                    if (yearBlock) {
-                    // reset height so it can shrink if needed
-                    yearBlock.style.height = 'auto';
-                    // set height to match section height
-                    yearBlock.style.height = section.offsetHeight + "px";
-                    }
+                const sections = document.querySelectorAll(".year-section-shad");
+                sections.forEach(section => {
+                const year = section.getAttribute("data-year");
+                const yearBlock = document.querySelector(`.year-block-shad[data-year="${year}"]`);
+                if (!yearBlock) return;
+                yearBlock.style.height = 'auto';
+                // use scrollHeight for accuracy and add small buffer
+                yearBlock.style.height = (section.scrollHeight + 1) + "px";
                 });
             }
 
+            // 1) after DOM is ready AND after all assets (images) are loaded
+            document.addEventListener("DOMContentLoaded", adjustYearBlockHeights);
+            window.addEventListener("load", adjustYearBlockHeights);
+
+            // 2) whenever the window is resized
+            window.addEventListener("resize", debounce(adjustYearBlockHeights, 100));
+            function debounce(fn, wait){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), wait); }; }
+
+            // 3) whenever any image finishes loading
+            document.querySelectorAll("img").forEach(img => {
+                if (!img.complete) {
+                img.addEventListener("load", adjustYearBlockHeights, { once:true });
+                img.addEventListener("error", adjustYearBlockHeights, { once:true });
+                }
+            });
+
+            // 4) if a card’s content changes height later, keep syncing
+            const ro = new ResizeObserver(adjustYearBlockHeights);
+            document.querySelectorAll(".year-section-shad").forEach(sec => ro.observe(sec));
+
             const filterButtons = document.querySelectorAll(".navbar .inner-link");
             const cards = document.querySelectorAll(".card");
+            const overlayEl = document.getElementById('loadingOverlay');
 
-            // Handle filtering
+            // helper to wait for next paint
+            const nextFrame = () => new Promise(r => requestAnimationFrame(() => r()));
+
+            // run your filtering with a temporary overlay
+            async function runFilterWithOverlay(filter){
+                // show overlay and give the browser a frame to paint it
+                overlayEl.classList.add('show');
+                await nextFrame();
+
+                // run your existing show/hide with stagger
+                const ops = [];
+                cards.forEach((card, index) => {
+                const category = card.getAttribute("data-category");
+                ops.push(new Promise(resolve => {
+                    setTimeout(() => {
+                    if (filter === 'All' || category === filter) {
+                        card.classList.remove('hide');
+                        card.classList.add('show');
+                    } else {
+                        card.classList.remove('show');
+                        card.classList.add('hide');
+                    }
+                    resolve();
+                    }, index * 60); // your stagger (tweak as you like)
+                }));
+                });
+
+                // wait for all card transitions to “complete”
+                await Promise.all(ops);
+
+                // allow CSS transitions to finish before measuring heights
+                await new Promise(r => setTimeout(r, 300));
+                adjustYearBlockHeights();
+
+                // hide overlay
+                overlayEl.classList.remove('show');
+            }
+
+            // click handler
             filterButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    const filter = button.getAttribute("data-filter");
+                button.addEventListener("click", async () => {
+                const filter = button.getAttribute("data-filter");
 
-                    // Highlight active filter
-                    filterButtons.forEach(btn => btn.classList.remove("active"));
-                    button.classList.add("active");
+                // highlight active filter
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
 
-                    // Show/hide cards
-                    cards.forEach((card, index) => {
-                        const category = card.getAttribute("data-category");
-                        if (filter === 'All' || category === filter) {
-                            setTimeout(() => {
-                            card.classList.remove('hide');
-                            card.classList.add('show');
-                            if (index === cards.length - 1) {
-                                adjustYearBlockHeights();
-                            }
-                            }, index * 100);
-                        } else {
-                            setTimeout(() => {
-                            card.classList.remove('show');
-                            card.classList.add('hide');
-                            if (index === cards.length - 1) {
-                                adjustYearBlockHeights();
-                            }
-                            }, index * 100);
-                        }
-                    });
+                // run with overlay
+                runFilterWithOverlay(filter);
                 });
             });
             
