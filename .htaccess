@@ -29,6 +29,11 @@ IndexIgnore *
 # ========================================
 <IfModule mod_headers.c>
     # Content Security Policy (CSP)
+    # Note: 'unsafe-inline' and 'unsafe-eval' are currently required for jQuery and other legacy scripts
+    # For better security, consider:
+    # 1. Moving inline scripts to external files
+    # 2. Using CSP nonces for required inline scripts
+    # 3. Refactoring to eliminate eval() usage
     # Adjust domains based on your actual external resources
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
     

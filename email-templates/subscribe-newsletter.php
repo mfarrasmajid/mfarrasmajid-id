@@ -52,6 +52,13 @@ if (!$email) {
 	sendJsonResponse('alert-danger', 'Invalid email address!');
 }
 
+// Validate name if provided
+$name 	= isset($_POST['name']) ? validateName($_POST['name']) : '';
+if ($name === false) {
+	logError('Header injection attempt in name field');
+	sendJsonResponse('alert-danger', 'Invalid name format!');
+}
+
 // Enable / Disable Mailchimp
 $enable_mailchimp = 'no'; // yes OR no
 
@@ -64,7 +71,7 @@ $receiver_name 	= defined('RECEIVER_NAME') ? RECEIVER_NAME : 'Your Name';
 $subject 	= 'Subscribe Newsletter form details';
 if ($enable_mailchimp == 'no') { // Simple / SMTP Email
 
-	$name 	= isset($_POST['name']) ? sanitizeInput($_POST['name']) : '';
+	// Name already validated above
 
 	$message = '
 	<html>
@@ -189,7 +196,8 @@ if ($enable_mailchimp == 'no') { // Simple / SMTP Email
 	$api_key 	= defined('MAILCHIMP_API_KEY') ? MAILCHIMP_API_KEY : 'YOUR_MAILCHIMP_API_KEY';
 	$list_id 	= defined('MAILCHIMP_LIST_ID') ? MAILCHIMP_LIST_ID : 'YOUR_MAILCHIMP_LIST_ID';
 	$status 	= 'subscribed';
-	$f_name		= !empty($_POST['name']) ? sanitizeInput($_POST['name']) : substr($email, 0, strpos($email,'@'));
+	// Use validated name or extract from email
+	$f_name		= !empty($name) ? $name : substr($email, 0, strpos($email,'@'));
 
 	$data = array(
 		'apikey'        => $api_key,

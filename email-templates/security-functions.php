@@ -63,9 +63,22 @@ function validateEmail($email) {
 }
 
 /**
- * Validate phone number
- * Allow only numbers, spaces, +, -, (, )
+ * Validate name field
+ * Mencegah header injection dalam email headers
  */
+function validateName($name) {
+    $name = trim($name);
+    
+    // Check for header injection attempts
+    $forbidden_chars = ["\r", "\n", "%0a", "%0d"];
+    foreach ($forbidden_chars as $char) {
+        if (stripos($name, $char) !== false) {
+            return false;
+        }
+    }
+    
+    return sanitizeInput($name);
+}
 function validatePhone($phone) {
     $phone = trim($phone);
     if (preg_match('/^[0-9\s\+\-\(\)]+$/', $phone)) {
@@ -160,8 +173,28 @@ function validateRedirectUrl($url) {
     
     // If it has a host, check if it's the same domain
     if (isset($parsed['host'])) {
-        $current_host = $_SERVER['HTTP_HOST'];
-        if ($parsed['host'] === $current_host) {
+        // Get current host safely with validation
+        $current_host = '';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            // Validate HTTP_HOST format
+            $current_host = preg_replace('/[^a-zA-Z0-9\.\-:]/', '', $_SERVER['HTTP_HOST']);
+        }
+        
+        // Also check against SERVER_NAME as fallback
+        if (empty($current_host) && isset($_SERVER['SERVER_NAME'])) {
+            $current_host = $_SERVER['SERVER_NAME'];
+        }
+        
+        // Whitelist of allowed domains (add your domains here)
+        $allowed_hosts = [
+            $current_host,
+            'mfarrasmajid.id',
+            'www.mfarrasmajid.id',
+            'localhost',
+            '127.0.0.1'
+        ];
+        
+        if (in_array($parsed['host'], $allowed_hosts, true)) {
             return sanitizeInput($url);
         }
     }
@@ -188,7 +221,7 @@ function sendJsonResponse($alert, $message) {
 function logError($message) {
     $log_file = __DIR__ . '/error.log';
     $timestamp = date('Y-m-d H:i:s');
-    $ip = $_SERVER['REMOTE_ADDR'];
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'CLI';
     $log_message = "[{$timestamp}] IP: {$ip} - {$message}\n";
     error_log($log_message, 3, $log_file);
 }

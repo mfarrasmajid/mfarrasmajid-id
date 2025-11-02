@@ -52,7 +52,12 @@ if (!$from) {
 	sendJsonResponse('alert-danger', 'Invalid email address!');
 }
 
-$name 	= isset($_POST['name']) ? sanitizeInput($_POST['name']) : '';
+$name 	= isset($_POST['name']) ? validateName($_POST['name']) : '';
+if ($name === false) {
+	logError('Header injection attempt in name field');
+	sendJsonResponse('alert-danger', 'Invalid name format!');
+}
+
 $phone 	= isset($_POST['phone']) ? validatePhone($_POST['phone']) : '';
 $comment = isset($_POST['comment']) ? sanitizeInput($_POST['comment']) : '';
 
