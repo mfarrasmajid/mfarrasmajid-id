@@ -163,7 +163,10 @@ if ($enable_smtp == 'no') { // Simple Email
 		$mail->Password = defined('SMTP_PASSWORD') ? SMTP_PASSWORD : 'YOUR_SMTP_PASSWORD';
 		$mail->SMTPSecure = defined('SMTP_SECURE') ? SMTP_SECURE : 'ssl';
 		$mail->Port     = defined('SMTP_PORT') ? SMTP_PORT : 465;
-		$mail->setFrom($from, $name);
+		
+		// Use verified sender address for SMTP authentication
+		$mail->setFrom($receiver_email, $receiver_name);
+		// Set user's email as reply-to
 		$mail->addReplyTo($from, $name);
 		
 		foreach ($toemailaddresses as $toemailaddress) {

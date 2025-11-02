@@ -77,18 +77,32 @@ function validatePhone($phone) {
 /**
  * Rate Limiting
  * Batasi jumlah request dari IP yang sama
+ * Uses file locking to prevent race conditions
  */
 function checkRateLimit($max_attempts = 5, $time_window = 3600) {
-    $ip = $_SERVER['REMOTE_ADDR'];
+    // Get IP address, fallback to 'CLI' for command line execution
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'CLI';
     $rate_limit_file = __DIR__ . '/rate_limit.json';
     
-    // Load existing data
-    $rate_data = [];
-    if (file_exists($rate_limit_file)) {
-        $rate_data = json_decode(file_get_contents($rate_limit_file), true);
-        if (!is_array($rate_data)) {
-            $rate_data = [];
-        }
+    // Open file with lock
+    $fp = fopen($rate_limit_file, 'c+');
+    if (!$fp) {
+        logError('Failed to open rate limit file');
+        return true; // Allow request if file can't be opened
+    }
+    
+    // Acquire exclusive lock
+    if (!flock($fp, LOCK_EX)) {
+        fclose($fp);
+        logError('Failed to acquire lock on rate limit file');
+        return true; // Allow request if lock can't be acquired
+    }
+    
+    // Read current data
+    $contents = stream_get_contents($fp);
+    $rate_data = !empty($contents) ? json_decode($contents, true) : [];
+    if (!is_array($rate_data)) {
+        $rate_data = [];
     }
     
     $current_time = time();
@@ -101,6 +115,7 @@ function checkRateLimit($max_attempts = 5, $time_window = 3600) {
     }
     
     // Check current IP
+    $allowed = true;
     if (!isset($rate_data[$ip])) {
         $rate_data[$ip] = [
             'count' => 1,
@@ -110,15 +125,20 @@ function checkRateLimit($max_attempts = 5, $time_window = 3600) {
         $rate_data[$ip]['count']++;
         
         if ($rate_data[$ip]['count'] > $max_attempts) {
-            // Save updated data
-            file_put_contents($rate_limit_file, json_encode($rate_data));
-            return false;
+            $allowed = false;
         }
     }
     
-    // Save updated data
-    file_put_contents($rate_limit_file, json_encode($rate_data));
-    return true;
+    // Write updated data back to file
+    ftruncate($fp, 0);
+    rewind($fp);
+    fwrite($fp, json_encode($rate_data));
+    
+    // Release lock and close file
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    
+    return $allowed;
 }
 
 /**

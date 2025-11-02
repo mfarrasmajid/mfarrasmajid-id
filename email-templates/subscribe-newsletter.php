@@ -144,8 +144,15 @@ if ($enable_mailchimp == 'no') { // Simple / SMTP Email
 			$mail->Password = defined('SMTP_PASSWORD') ? SMTP_PASSWORD : 'YOUR_SMTP_PASSWORD';
 			$mail->SMTPSecure = defined('SMTP_SECURE') ? SMTP_SECURE : 'ssl';
 			$mail->Port     = defined('SMTP_PORT') ? SMTP_PORT : 465;
-			$mail->setFrom($from, $name);
-			$mail->addReplyTo($email);
+			
+			// Use verified sender address for SMTP authentication
+			$mail->setFrom($receiver_email, $receiver_name);
+			// Set user's email as reply-to with name if available
+			if (!empty($name)) {
+				$mail->addReplyTo($email, $name);
+			} else {
+				$mail->addReplyTo($email);
+			}
 			
 			foreach ($toemailaddresses as $toemailaddress) {
 				$mail->AddAddress($toemailaddress['email'], $toemailaddress['name']);

@@ -85,13 +85,15 @@ IndexIgnore *
 # ========================================
 # Prevent Hotlinking (Optional)
 # ========================================
-<IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteCond %{HTTP_REFERER} !^$
-    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?mfarrasmajid\.id [NC]
-    RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp)$ [NC]
-    RewriteRule .* - [F,L]
-</IfModule>
+# Uncomment and adjust domain name to enable hotlinking protection
+#<IfModule mod_rewrite.c>
+#    RewriteEngine on
+#    RewriteCond %{HTTP_REFERER} !^$
+#    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?mfarrasmajid\.id [NC]
+#    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?localhost [NC]
+#    RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp)$ [NC]
+#    RewriteRule .* - [F,L]
+#</IfModule>
 
 # ========================================
 # MIME Types
