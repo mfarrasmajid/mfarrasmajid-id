@@ -1,0 +1,39 @@
+# Proteksi direktori email-templates
+# Mencegah akses langsung ke file PHP dan file konfigurasi
+
+# Deny access to configuration files
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "security-functions.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "rate_limit.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "error.log">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Deny access to backup files
+<FilesMatch "\.(bak|old|orig|save|swp)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory listing
+Options -Indexes
+
+# Protect against directory traversal
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} (\.\.\/|\.\.\\)
+    RewriteRule .* - [F,L]
+</IfModule>

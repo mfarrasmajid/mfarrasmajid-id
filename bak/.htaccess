@@ -1,0 +1,18 @@
+# Proteksi direktori bak
+# Folder ini berisi backup dan showcase yang tidak seharusnya diakses secara langsung
+
+# Disable directory listing
+Options -Indexes
+
+# Deny access to all PHP files in this directory (optional - uncomment if needed)
+# <FilesMatch "\.php$">
+#     Order Allow,Deny
+#     Deny from all
+# </FilesMatch>
+
+# Protect against directory traversal
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} (\.\.\/|\.\.\\)
+    RewriteRule .* - [F,L]
+</IfModule>

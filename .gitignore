@@ -1,0 +1,39 @@
+# Security and Configuration Files
+config.php
+email-templates/config.php
+email-templates/rate_limit.json
+email-templates/error.log
+*.log
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Backup files
+*.bak
+*.old
+*.orig
+*.save
+*.swp
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# PHPMailer test files (if any)
+email-templates/phpmailer/examples/
+email-templates/phpmailer/test/
