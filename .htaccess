@@ -1,0 +1,118 @@
+# Security and Performance Configuration for Portfolio Website
+
+# Disable Directory Listing
+Options -Indexes
+IndexIgnore *
+
+# ========================================
+# HTTPS Enforcement
+# ========================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    
+    # Force www (optional - adjust based on your preference)
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+    
+    # Protect against directory traversal
+    RewriteCond %{REQUEST_URI} (\.\.\/|\.\.\\)
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ========================================
+# Security Headers
+# ========================================
+<IfModule mod_headers.c>
+    # Content Security Policy (CSP)
+    # Note: 'unsafe-inline' and 'unsafe-eval' are currently required for jQuery and other legacy scripts
+    # For better security, consider:
+    # 1. Moving inline scripts to external files
+    # 2. Using CSP nonces for required inline scripts
+    # 3. Refactoring to eliminate eval() usage
+    # Adjust domains based on your actual external resources
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
+    
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy (formerly Feature Policy)
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    
+    # Remove server signature
+    Header unset Server
+    Header unset X-Powered-By
+</IfModule>
+
+# ========================================
+# File Access Protection
+# ========================================
+
+# Deny access to sensitive files
+<FilesMatch "(^\.htaccess|^\.htpasswd|^\.git|\.env|config\.php|\.ini|\.log|\.bak|\.old|\.swp)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Protect PHP files in sensitive directories
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} ^/email-templates/.*\.php$ [NC]
+    RewriteCond %{REQUEST_URI} !^/email-templates/(contact-form|contact-form-budget|subscribe-newsletter)\.php$ [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ========================================
+# PHP Security Settings
+# ========================================
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /var/log/php_errors.log
+    php_flag expose_php Off
+    php_value session.cookie_httponly On
+    php_value session.cookie_secure On
+    php_value session.use_only_cookies On
+</IfModule>
+
+# ========================================
+# Prevent Hotlinking (Optional)
+# ========================================
+# Uncomment and adjust domain name to enable hotlinking protection
+#<IfModule mod_rewrite.c>
+#    RewriteEngine on
+#    RewriteCond %{HTTP_REFERER} !^$
+#    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?mfarrasmajid\.id [NC]
+#    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?localhost [NC]
+#    RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp)$ [NC]
+#    RewriteRule .* - [F,L]
+#</IfModule>
+
+# ========================================
+# MIME Types
+# ========================================
+<IfModule mod_mime.c>
+    AddType application/javascript js
+    AddType text/css css
+    AddType image/svg+xml svg svgz
+    AddEncoding gzip svgz
+</IfModule>
+
+# ========================================
+# Compression (Optional - for performance)
+# ========================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>

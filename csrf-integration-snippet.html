@@ -1,0 +1,56 @@
+<!--
+    CSRF Token Integration Snippet
+    
+    Add this PHP code at the TOP of your HTML file (before any HTML output):
+-->
+<?php
+session_start();
+require_once __DIR__ . '/email-templates/security-functions.php';
+$csrf_token = generateCsrfToken();
+?>
+
+<!--
+    Then add this hidden input field inside your <form> tag:
+-->
+<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+
+<!--
+    Complete Form Example:
+-->
+<form method="POST" action="email-templates/contact-form.php">
+    <!-- CSRF Token -->
+    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+    
+    <!-- Your form fields -->
+    <input type="text" name="name" required>
+    <input type="email" name="email" required>
+    <textarea name="comment" required></textarea>
+    
+    <button type="submit">Send</button>
+</form>
+
+<!--
+    AJAX Form Submission Example:
+-->
+<script>
+document.getElementById('yourFormId').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    var formData = new FormData(this);
+    
+    fetch('email-templates/contact-form.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        // data.alert = 'alert-success' or 'alert-danger'
+        // data.message = success/error message
+        console.log(data);
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+</script>
