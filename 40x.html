@@ -23,6 +23,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/responsive.css" />
         <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/animations.css" />
     </head>
     <body>
         <!-- start header -->
@@ -117,17 +118,17 @@
         </header>
         <!-- end header -->
         <!-- start page not found section -->
-        <section id="home" class="parallax p-0 mobile-height wow animate__fadeIn" data-parallax-background-ratio="0.5">
-            <div class="opacity-full bg-extra-dark-gray"></div>
+        <section id="home" class="parallax p-0 mobile-height wow animate__fadeIn" data-parallax-background-ratio="0.5" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);">
+            <div class="opacity-full" style="background: radial-gradient(circle at 50% 50%, rgba(255, 33, 79, 0.1) 0%, transparent 70%);"></div>
             <div class="container position-relative full-screen">
                 <div class="row h-100 align-items-center">
                     <div class="col-12 text-center">
-                        <div class="bg-black-opacity-light w-50 mx-auto md-w-80 xs-w-95">
+                        <div class="glass-dark w-50 mx-auto md-w-80 xs-w-95" style="background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
                             <div class="padding-fifteen-all sm-padding-twelve-all xs-padding-25px-all">
-                                <span class="title-extra-large text-white-2 font-weight-600 d-block margin-30px-bottom sm-margin-10px-bottom">404!</span>
-                                <h6 class="text-uppercase text-deep-pink font-weight-600 alt-font d-block margin-5px-bottom">Page Not Found</h6>
-                                <span class="text-medium-gray margin-20px-bottom d-block mx-auto text-large md-w-100">The page you were looking for could not be found.</span>
-                                <a href="index.html" class="btn btn-transparent-white btn-medium text-extra-small border-radius-4"><i class="ti-arrow-left margin-5px-right ms-0" aria-hidden="true"></i> Back To Homepage</a>
+                                <span class="title-extra-large text-white-2 font-weight-600 d-block margin-30px-bottom sm-margin-10px-bottom bounce" style="font-size: 8rem; line-height: 1; font-family: 'Montserrat', sans-serif; text-shadow: 0 4px 20px rgba(255, 33, 79, 0.5);">404!</span>
+                                <h6 class="text-uppercase text-deep-pink font-weight-600 alt-font d-block margin-5px-bottom fade-in-up delay-200" style="font-size: 1.5rem; letter-spacing: 3px;">Page Not Found</h6>
+                                <span class="text-medium-gray margin-20px-bottom d-block mx-auto text-large md-w-100 fade-in-up delay-400" style="color: #cccccc; font-size: 1.1rem;">Halaman yang Anda cari tidak ditemukan.</span>
+                                <a href="index.html" class="btn btn-gradient btn-medium text-extra-small btn-rounded margin-20px-top fade-in-up delay-600" style="padding: 12px 32px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;"><i class="ti-arrow-left margin-5px-right ms-0" aria-hidden="true"></i> Kembali ke Beranda</a>
                             </div>                       
                         </div>
                     </div>

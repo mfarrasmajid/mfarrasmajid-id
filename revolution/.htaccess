@@ -1,0 +1,16 @@
+# Protection for revolution slider directory
+# Disable directory listing
+Options -Indexes
+
+# Protect against directory traversal
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} (\.\.\/|\.\.\\)
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Allow necessary files for revolution slider
+<FilesMatch "\.(js|css|jpg|jpeg|png|gif|svg|webp|woff|woff2|ttf|eot)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

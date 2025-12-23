@@ -1,0 +1,16 @@
+# Protection for fonts directory
+# Disable directory listing
+Options -Indexes
+
+# Protect against directory traversal
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} (\.\.\/|\.\.\\)
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Allow font files to be served
+<FilesMatch "\.(woff|woff2|ttf|eot|otf|svg)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

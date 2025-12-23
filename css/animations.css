@@ -1,0 +1,496 @@
+/* ===================================
+    Modern Animations & Transitions
+    Portfolio Website - mfarrasmajid.id
+====================================== */
+
+/* Note: prefers-reduced-motion is handled in style.css */
+
+/* ===================================
+    Loading Animations
+====================================== */
+
+/* Spinner loader */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Skeleton loading */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 0px, #f8f8f8 40px, #f0f0f0 80px);
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+/* ===================================
+    Fade Animations
+====================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease-out forwards;
+}
+
+/* ===================================
+    Scale & Zoom Animations
+====================================== */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.zoom-in {
+    animation: zoomIn 0.5s ease-out forwards;
+}
+
+.zoom-out {
+    animation: zoomOut 0.5s ease-out forwards;
+}
+
+/* ===================================
+    Slide Animations
+====================================== */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s ease-out forwards;
+}
+
+.slide-in-down {
+    animation: slideInDown 0.5s ease-out forwards;
+}
+
+/* ===================================
+    Bounce & Shake Animations
+====================================== */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s ease infinite;
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+/* ===================================
+    Rotation Animations
+====================================== */
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flip {
+    from {
+        transform: perspective(400px) rotateY(0);
+    }
+    to {
+        transform: perspective(400px) rotateY(360deg);
+    }
+}
+
+.rotate-360 {
+    animation: rotate360 2s linear infinite;
+}
+
+.flip {
+    animation: flip 1s ease;
+}
+
+/* ===================================
+    Gradient Animation
+====================================== */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-animated {
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+}
+
+/* ===================================
+    Ripple Effect
+====================================== */
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::after {
+    width: 200px;
+    height: 200px;
+    animation: ripple 0.6s ease-out;
+}
+
+/* ===================================
+    Glow & Shimmer Effects
+====================================== */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 33, 79, 0.5),
+                    0 0 10px rgba(255, 33, 79, 0.4),
+                    0 0 15px rgba(255, 33, 79, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 33, 79, 0.8),
+                    0 0 20px rgba(255, 33, 79, 0.6),
+                    0 0 30px rgba(255, 33, 79, 0.4);
+    }
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ===================================
+    Floating Animation
+====================================== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ===================================
+    Typing Effect
+====================================== */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--base-color, #ff214f);
+    }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 0.15em solid var(--base-color, #ff214f);
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* ===================================
+    Progress Bar Animation
+====================================== */
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+}
+
+.progress-animated {
+    animation: progress 2s ease-out forwards;
+}
+
+/* ===================================
+    Delay Utilities
+====================================== */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-700 {
+    animation-delay: 0.7s;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+}
+
+.delay-900 {
+    animation-delay: 0.9s;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
+
+/* ===================================
+    Duration Utilities
+====================================== */
+.duration-fast {
+    animation-duration: 0.3s;
+}
+
+.duration-normal {
+    animation-duration: 0.6s;
+}
+
+.duration-slow {
+    animation-duration: 1s;
+}
+
+.duration-slower {
+    animation-duration: 2s;
+}
