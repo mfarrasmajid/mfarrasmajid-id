@@ -139,12 +139,11 @@ ul, ol, dl {list-style-position: outside; margin-bottom: 25px}
 header [class^="container-"] [class^="col-"], header [class^="container-"] [class*=" col-"] {position: relative; padding-left: 15px; padding-right: 15px;}
 .swiper-container { z-index: 1; }
 
-/* Smooth scroll behavior */
+/* Smooth scroll behavior with accessibility support */
 html {
     scroll-behavior: smooth;
 }
 
-/* Respect user's motion preferences for accessibility */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -152,13 +151,9 @@ html {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
     }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    :root {
-        scroll-behavior: smooth;
+    html {
+        scroll-behavior: auto !important;
     }
 }
 
