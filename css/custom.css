@@ -1,6 +1,15 @@
+/* ===================================
+    Custom Modern Effects
+    Portfolio Website - mfarrasmajid.id
+====================================== */
+
+/* ===================================
+    Image Containers & Overlays
+====================================== */
 .image-container {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
 .image-container .overlay {
@@ -9,6 +18,488 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity here */
-  pointer-events: none; /* Ensure the overlay doesn't block interactions with the image */
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: background-color 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+    Glass Morphism Effects
+====================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ===================================
+    Modern Gradient Backgrounds
+====================================== */
+.gradient-primary {
+  background: linear-gradient(135deg, #ff214f 0%, #ff6b6b 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 33, 79, 0.8) 0%, rgba(255, 107, 107, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradient-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Radial gradients */
+.gradient-radial {
+  background: radial-gradient(circle, #ff214f 0%, #222222 100%);
+}
+
+.gradient-radial-center {
+  background: radial-gradient(circle at center, rgba(255, 33, 79, 0.2) 0%, transparent 70%);
+}
+
+/* ===================================
+    Modern Shadows
+====================================== */
+.shadow-soft {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-hard {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+}
+
+.shadow-colored {
+  box-shadow: 0 8px 24px rgba(255, 33, 79, 0.3);
+}
+
+.shadow-hover {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-hover:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Inner shadows for depth */
+.shadow-inset {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+    Modern Card Effects
+====================================== */
+.card-modern {
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card-modern:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+}
+
+.card-glow {
+  position: relative;
+  border-radius: 16px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff214f, #ff6b6b, #ff214f);
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* ===================================
+    Modern Button Styles
+====================================== */
+.btn-modern {
+  position: relative;
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff214f 0%, #ff6b6b 100%);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 33, 79, 0.3);
+}
+
+.btn-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.btn-modern:hover::before {
+  left: 100%;
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 33, 79, 0.4);
+}
+
+.btn-modern:active {
+  transform: translateY(0);
+}
+
+/* Outline button style */
+.btn-outline-modern {
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: transparent;
+  color: #ff214f;
+  font-weight: 600;
+  border: 2px solid #ff214f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-outline-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff214f;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline-modern:hover::before {
+  width: 100%;
+}
+
+.btn-outline-modern:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 33, 79, 0.3);
+}
+
+/* ===================================
+    Loading States
+====================================== */
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ff214f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-dots {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff214f;
+  animation: bounce-dots 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce-dots {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* ===================================
+    Enhanced Form Styles
+====================================== */
+.input-modern {
+  padding: 14px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.input-modern:focus {
+  border-color: #ff214f;
+  box-shadow: 0 0 0 4px rgba(255, 33, 79, 0.1);
+  outline: none;
+}
+
+.input-modern:hover {
+  border-color: #c0c0c0;
+}
+
+/* Floating label effect */
+.input-group-modern {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-group-modern input,
+.input-group-modern textarea {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.input-group-modern label {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  font-size: 15px;
+  color: #6f6f6f;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: #ffffff;
+  padding: 0 4px;
+}
+
+.input-group-modern input:focus + label,
+.input-group-modern input:not(:placeholder-shown) + label,
+.input-group-modern textarea:focus + label,
+.input-group-modern textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 16px;
+  font-size: 12px;
+  color: #ff214f;
+}
+
+.input-group-modern input:focus,
+.input-group-modern textarea:focus {
+  border-color: #ff214f;
+  box-shadow: 0 0 0 4px rgba(255, 33, 79, 0.1);
+  outline: none;
+}
+
+/* ===================================
+    Backdrop Blur Effects
+====================================== */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ===================================
+    Modern Navigation Effects
+====================================== */
+.nav-modern a {
+  position: relative;
+  padding: 8px 16px;
+  color: #6f6f6f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-modern a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ff214f;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-modern a:hover::after,
+.nav-modern a.active::after {
+  width: 80%;
+}
+
+.nav-modern a:hover,
+.nav-modern a.active {
+  color: #ff214f;
+}
+
+/* ===================================
+    Parallax Ready Layers
+====================================== */
+.parallax-layer {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* ===================================
+    Utility Classes
+====================================== */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth scaling */
+.scale-hover {
+  transition: transform 0.3s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.05);
+}
+
+/* ===================================
+    Accessibility
+====================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #ff214f;
+  outline-offset: 2px;
+}
+
+/* ===================================
+    Responsive Utilities
+====================================== */
+@media (max-width: 768px) {
+  .card-modern:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .shadow-hover:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Reduce motion on mobile for better performance */
+  .parallax-layer {
+    transform: none !important;
+  }
 }

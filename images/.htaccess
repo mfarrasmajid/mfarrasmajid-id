@@ -1,0 +1,16 @@
+# Protection for images directory
+# Disable directory listing
+Options -Indexes
+
+# Protect against directory traversal
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} (\.\.\/|\.\.\\)
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# Allow image files to be served
+<FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
