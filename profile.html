@@ -291,8 +291,8 @@
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 box-shadow: 0 8px 24px rgba(0,0,0,0.15); 
                 text-align: center; 
-                padding: 20px; 
-                font-size: 3rem; 
+                padding: 5vw; 
+                font-size: 10vw; 
                 font-weight: 800; 
                 z-index: 50;
                 font-family: 'Montserrat', sans-serif;
@@ -366,6 +366,12 @@
                     font-weight: 800; 
                     z-index: 50;
                     font-family: 'Montserrat', sans-serif;
+                }
+            }
+
+            @media (max-width: 320px) {
+                .card-title {
+                    margin-left: 3vw !important;
                 }
             }
 
@@ -519,7 +525,7 @@
                     <div class="card-special card" data-category="">
                         <div class="card-header">
                             <img src="images/_shadalkane/farras-majid.jpg" alt="Farras Majid" class="cover icon-special">
-                            <div class="card-title"><div class="title">Halo! Selamat Datang!</div><div class="message"><i>Muhammad Farras Majid</i></div><div class="message"><i>Full Stack Web Developer & Data Engineer</i></div></div>
+                            <div class="card-title"><div class="title">Halo! Selamat Datang!</div><div class="message"><i>Muhammad Farras Majid</i></div><br><div class="message"><i>Full Stack Web Developer & Data Engineer</i></div></div>
                         </div>
                     </div>
                     <div class="card card-flush" data-category="Projects">
