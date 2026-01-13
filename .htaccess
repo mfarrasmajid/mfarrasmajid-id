@@ -10,13 +10,17 @@ IndexIgnore *
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
-    # Force HTTPS
+    # Skip all redirects for localhost
+    RewriteCond %{HTTP_HOST} ^localhost [NC,OR]
+    RewriteCond %{HTTP_HOST} ^127\.0\.0\.1 [NC]
+    RewriteRule .* - [S=2]
+    
+    # Force HTTPS (production only)
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
     
-    # Force www (optional - adjust based on your preference)
+    # Force www (production only)
     RewriteCond %{HTTP_HOST} !^www\. [NC]
-    RewriteCond %{HTTP_HOST} !^localhost [NC]
     RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
     
     # Protect against directory traversal
