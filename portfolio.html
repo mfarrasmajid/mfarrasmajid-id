@@ -1,0 +1,886 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- title -->
+        <title>Farras Majid - Portfolio</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="author" content="ShadAlkane">
+        <!-- description -->
+        <meta name="description" content="Portfolio karya dan project Farras Majid">
+        <!-- keywords -->
+        <meta name="keywords" content="portfolio, web developer, laravel, projects, fullstack developer">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/_shadalkane/icon.png">
+        <!-- favicon -->
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
+        <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/animations.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+            
+            :root {
+                --primary-color: #ff214f;
+                --secondary-color: #ff6b6b;
+                --dark-bg: #1a1a1a;
+                --light-bg: #ffffff;
+                --text-dark: #2d2d2d;
+                --text-light: #6f6f6f;
+                --border-radius: 16px;
+                --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            html {font-size: 15px; scroll-behavior: smooth;}
+            body {
+                font-family: 'Roboto', sans-serif; 
+                -webkit-font-smoothing: antialiased; 
+                font-size:14px; 
+                color: var(--text-light); 
+                font-weight: 400;
+                margin: 0;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                min-height: 100vh;
+            }
+
+            /* Animated background particles */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(255, 33, 79, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.05) 0%, transparent 40%);
+                pointer-events: none;
+                z-index: 0;
+                animation: backgroundShift 15s ease-in-out infinite;
+            }
+
+            @keyframes backgroundShift {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+
+            /* Hero Section */
+            .hero-section {
+                position: relative;
+                padding: 120px 0 80px;
+                text-align: center;
+                background: linear-gradient(135deg, var(--dark-bg) 0%, #2d2d2d 100%);
+                color: white;
+                overflow: hidden;
+            }
+
+            .hero-section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ff214f" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+                background-size: cover;
+                opacity: 0.3;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 1;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+                font-weight: 800;
+                font-family: 'Montserrat', sans-serif;
+                margin-bottom: 20px;
+                background: linear-gradient(135deg, #ffffff 0%, #ff214f 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: fadeInDown 1s ease-out;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+                color: #e0e0e0;
+                margin-bottom: 30px;
+                animation: fadeInUp 1s ease-out 0.2s both;
+            }
+
+            .hero-stats {
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+                margin-top: 40px;
+                animation: fadeInUp 1s ease-out 0.4s both;
+            }
+
+            .stat-item {
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+                font-weight: 800;
+                font-family: 'Montserrat', sans-serif;
+                color: var(--primary-color);
+                display: block;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+                color: #b0b0b0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            /* Filter Buttons */
+            .filter-section {
+                padding: 40px 20px;
+                text-align: center;
+                position: sticky;
+                top: 80px;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                z-index: 100;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            }
+
+            .filter-buttons {
+                display: inline-flex;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 12px 30px;
+                border: 2px solid var(--primary-color);
+                background: white;
+                color: var(--primary-color);
+                border-radius: 50px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: var(--transition);
+                font-family: 'Montserrat', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.85rem;
+            }
+
+            .filter-btn:hover, .filter-btn.active {
+                background: var(--primary-color);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(255, 33, 79, 0.3);
+            }
+
+            /* Portfolio Grid */
+            .portfolio-container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 60px 20px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .portfolio-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+            /* Project Card */
+            .project-card {
+                background: white;
+                border-radius: var(--border-radius);
+                overflow: hidden;
+                box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+                transition: var(--transition);
+                position: relative;
+                cursor: pointer;
+                animation: fadeInScale 0.6s ease-out backwards;
+            }
+
+            .project-card:nth-child(1) { animation-delay: 0.1s; }
+            .project-card:nth-child(2) { animation-delay: 0.2s; }
+            .project-card:nth-child(3) { animation-delay: 0.3s; }
+            .project-card:nth-child(4) { animation-delay: 0.4s; }
+            .project-card:nth-child(5) { animation-delay: 0.5s; }
+            .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+            .project-card.hidden {
+                display: none;
+            }
+
+            .project-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            }
+
+            .project-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .project-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .project-image {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            .project-card:hover .project-image {
+                transform: scale(1.1);
+            }
+
+            .project-content {
+                padding: 25px;
+            }
+
+            .project-category {
+                display: inline-block;
+                padding: 6px 16px;
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                color: white;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 15px;
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--text-dark);
+                margin-bottom: 12px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .project-date {
+                font-size: 0.85rem;
+                color: var(--text-light);
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .project-date i {
+                color: var(--primary-color);
+            }
+
+            .project-description {
+                color: var(--text-light);
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .project-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .tag {
+                padding: 4px 12px;
+                background: #f5f5f5;
+                border-radius: 15px;
+                font-size: 0.75rem;
+                color: var(--text-light);
+                font-weight: 500;
+            }
+
+            .project-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--primary-color);
+                font-weight: 600;
+                text-decoration: none;
+                transition: gap 0.3s ease;
+            }
+
+            .project-link:hover {
+                gap: 12px;
+            }
+
+            /* Animations */
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeInScale {
+                from {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+
+                .hero-subtitle {
+                    font-size: 1.2rem;
+                }
+
+                .hero-stats {
+                    flex-direction: column;
+                    gap: 30px;
+                }
+
+                .portfolio-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .filter-buttons {
+                    gap: 10px;
+                }
+
+                .filter-btn {
+                    padding: 10px 20px;
+                    font-size: 0.8rem;
+                }
+            }
+
+            /* Loading Animation */
+            .loading {
+                text-align: center;
+                padding: 40px;
+                color: var(--text-light);
+            }
+
+            .loading::after {
+                content: "...";
+                animation: dots 1.5s steps(4, end) infinite;
+            }
+
+            @keyframes dots {
+                0%, 20% { content: "."; }
+                40% { content: ".."; }
+                60%, 100% { content: "..."; }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- start header -->
+        <header>
+            <!-- start navigation -->
+            <nav class="navbar navbar-default bootsnav navbar-top white-link header-dark background-black nav-box-width navbar-expand-lg">    
+                <div class="container-fluid nav-header-container">
+                    <!-- start logo -->
+                    <div class="col-auto col-lg-2 ps-0">
+                        <a href="index.html" title="Farras Majid" class="logo"><img src="images/_shadalkane/logo.png" data-at2x="images/_shadalkane/logo@2x.png" class="logo-dark" alt="Farras Majid"><img src="images/_shadalkane/logo-white.png" data-at2x="images/_shadalkane/logo-white@2x.png" alt="Farras Majid" class="logo-light default"></a>
+                    </div>
+                    <!-- end logo -->
+                    <div class="col accordion-menu pr-0 pr-md-3">
+                        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle-1">
+                            <span class="sr-only">toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-collapse collapse justify-content-center" id="navbar-collapse-toggle-1">
+                            <ul class="nav navbar-nav alt-font text-normal">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="profile.html" class="text-danger">Timeline</a></li>
+                                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto col-lg-2 pe-0 text-end">
+                    </div>
+                </div>
+            </nav>
+            <!-- end navigation -->  
+        </header>
+        <!-- end header -->
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Portfolio</h1>
+                <p class="hero-subtitle">On going project yang akan terus dikembangkan dan beberapa legacy projects</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="projectCount">20+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+                <button class="filter-btn" data-filter="mobile">Mobile App</button>
+                <button class="filter-btn" data-filter="tools">Tools & Utilities</button>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="portfolio-container">
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/theme-vendors.min.js"></script>
+        <script src="js/bootsnav.js"></script>
+        <script src="js/main.js"></script>
+        
+        <script>
+            // Portfolio data
+            const portfolioProjects = [
+                // 2025
+                {
+                    title: "Corsec OneFlux v2.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Oktober 2025",
+                    description: "Membuat aplikasi full stack Corsec OneFlux v2.0 untuk kebutuhan unit Corsec dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/corsec-oneflux/corsec-oneflux-4.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "DWH Monitoring",
+                    category: "Dashboard",
+                    categorySlug: "dashboard",
+                    date: "Oktober 2025",
+                    description: "Membuat otomatisasi pipelining dari Data Source ke Datawarehouse dengan menggunakan Airflow Apache sebagai pipeline, Clickhouse sebagai Datawarehouse, dan Laravel sebagai UI.",
+                    image: "images/_shadalkane/dwh-monitoring/dwh-monitoring.png",
+                    tags: ["Laravel", "ClickHouse", "Apache Airflow", "ETL"]
+                },
+                {
+                    title: "Finance OneFlux v2.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Agustus 2025",
+                    description: "Membuat aplikasi full stack Finance OneFlux v2.0 untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/finance-oneflux/finance-oneflux-3.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "IT OneFlux v2.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Maret 2025",
+                    description: "Membuat aplikasi full stack IT OneFlux v2.0 untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/it-oneflux/it-oneflux-4.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "PMO OneFlux v2.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Februari 2025",
+                    description: "Membuat aplikasi full stack PMO OneFlux v2.0 untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/pmo-oneflux/pmo-oneflux-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                // 2024
+                {
+                    title: "HCM OneFlux v2.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Desember 2024",
+                    description: "Membuat aplikasi full stack HCM OneFlux v2.0 untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/hcm-oneflux/hcm-oneflux-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Tracking SPMK",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "November 2024",
+                    description: "Membuat aplikasi full stack Tracking SPMK untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/tracking-spmk/tracking-spmk-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Dashboard BBWS",
+                    category: "Dashboard",
+                    categorySlug: "dashboard",
+                    date: "September 2024",
+                    description: "Membuat aplikasi full stack Dashboard BBWS untuk kebutuhan unit BBWS Brantas dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/dashboard-bbws/dashboard-bbws-1.png",
+                    tags: ["Laravel", "MySQL", "Chart.js", "Dashboard"]
+                },
+                {
+                    title: "Finance PST",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "September 2024",
+                    description: "Membuat aplikasi full stack Finance PST untuk kebutuhan unit PST dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/finance-pst/finance-pst.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Finance OneFlux v1.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Juni 2024",
+                    description: "Membuat aplikasi full stack Finance OneFlux untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/finance-oneflux/finance-oneflux-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Talent Scouting",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Juni 2024",
+                    description: "Membuat aplikasi full stack Talent Scouting untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/aspirasi/aspirasi-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                // 2023
+                {
+                    title: "PMO OneFlux v1.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "September 2023",
+                    description: "Membuat aplikasi full stack PMO OneFlux untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/pmo-oneflux/pmo-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Corsec OneFlux v1.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "September 2023",
+                    description: "Membuat aplikasi full stack Corsec OneFlux untuk kebutuhan unit Corsec dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/corsec-oneflux/corsec-oneflux-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Transport Management",
+                    category: "Mobile App",
+                    categorySlug: "mobile",
+                    date: "September 2023",
+                    description: "Membuat aplikasi mobile Transport Management untuk kebutuhan unit Corsec dengan menggunakan stack Flutter dan Laravel.",
+                    image: "images/_shadalkane/transport-management/transport-management-1.png",
+                    tags: ["Flutter", "Laravel", "MySQL", "Mobile"]
+                },
+                {
+                    title: "IT OneFlux v1.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Agustus 2023",
+                    description: "Membuat aplikasi full stack IT OneFlux untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/it-oneflux/it-oneflux-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Gopro",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Juli 2023",
+                    description: "Membuat aplikasi full stack Gopro untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/gopro/gopro-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Dashboard Construction",
+                    category: "Dashboard",
+                    categorySlug: "dashboard",
+                    date: "Maret 2023",
+                    description: "Membuat aplikasi full stack Dashboard Construction untuk kebutuhan unit Construction dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/dashboard-construction/dashboard-construction-1.png",
+                    tags: ["PHP", "MySQL", "Chart.js", "Dashboard"]
+                },
+                // 2022
+                {
+                    title: "CME (Construction Management Engineering)",
+                    category: "Tools & Utilities",
+                    categorySlug: "tools",
+                    date: "November 2022",
+                    description: "Membuat aplikasi full stack Absensi CME untuk kebutuhan unit Manage Service dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/cme/cme-1.png",
+                    tags: ["Laravel", "MySQL", "CMS", "Bootstrap"]
+                },
+                {
+                    title: "Catalyst",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "September 2022",
+                    description: "Membuat aplikasi full stack Catalyst untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/catalyst/catalyst-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "MESOP Mitratel",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "September 2022",
+                    description: "Membuat aplikasi full stack Mesop Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/mesop/mesop-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "HCM OneFlux v1.0",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Juli 2022",
+                    description: "Membuat aplikasi full stack HCM OneFlux untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/hcm-oneflux/hcm-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Karir Mitratel",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Mei 2022",
+                    description: "Membuat aplikasi full stack Karir Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/karir/karir-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Absensi Radir",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Maret 2022",
+                    description: "Membuat aplikasi full stack Absensi Radir untuk kebutuhan unit Corporate Office dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
+                    image: "images/_shadalkane/absensi-radir/absensi-radir-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                // 2021
+                {
+                    title: "Dashboard IPO",
+                    category: "Dashboard",
+                    categorySlug: "dashboard",
+                    date: "Agustus 2021",
+                    description: "Membuat aplikasi full stack Dashboard IPO untuk kebutuhan IPO Mitratel dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/dashboard-ipo/dashboard-ipo-1.png",
+                    tags: ["Laravel", "MySQL", "Chart.js", "Dashboard"]
+                },
+                // 2020
+                {
+                    title: "Tania",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Desember 2020",
+                    description: "Membuat aplikasi full stack Tania untuk kebutuhan mitra PT GEAF dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/tania/tania-1.png",
+                    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "WOMTools",
+                    category: "Tools & Utilities",
+                    categorySlug: "tools",
+                    date: "Agustus 2020",
+                    description: "Membuat aplikasi full stack WOMTools untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/pmo-oneflux/womtools-1.png",
+                    tags: ["Laravel", "MySQL", "Tools", "JavaScript"]
+                },
+                {
+                    title: "Replika (Request Aplikasi)",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Maret 2020",
+                    description: "Membuat aplikasi full stack Replika (Request Aplikasi) untuk kebutuhan unit IT dengan menggunakan stack Codeigniter, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/presensi/presensi.jpg",
+                    tags: ["CodeIgniter", "MySQL", "Bootstrap", "JavaScript"]
+                },
+                {
+                    title: "Douglas",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Februari 2020",
+                    description: "Membuat aplikasi full stack Douglas untuk kebutuhan unit Legal dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/douglas/douglas-1.png",
+                    tags: ["PHP", "MySQL", "JavaScript", "HTML"]
+                },
+                {
+                    title: "Comando",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Januari 2020",
+                    description: "Membuat aplikasi full stack Comando untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/presensi/presensi.jpg",
+                    tags: ["PHP", "MySQL", "JavaScript", "HTML"]
+                },
+                // 2019
+                {
+                    title: "KM Online",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "November 2019",
+                    description: "Membuat aplikasi full stack KM Online untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/pmo-oneflux/kmonline-1.png",
+                    tags: ["PHP", "MySQL", "JavaScript", "HTML"]
+                },
+                {
+                    title: "Absensi dan Overtime SDM",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "September 2019",
+                    description: "Membuat aplikasi full stack Absensi dan Overtime untuk karyawan outsource di SDM dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/sdm/sdm-1.png",
+                    tags: ["PHP", "MySQL", "JavaScript", "HTML"]
+                },
+                {
+                    title: "Motor (Monitoring Radir)",
+                    category: "Dashboard",
+                    categorySlug: "dashboard",
+                    date: "Juni 2019",
+                    description: "Membuat aplikasi full stack Motor (Monitoring Radir) untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/pmo-oneflux/motor-1.png",
+                    tags: ["PHP", "MySQL", "Dashboard", "JavaScript"]
+                },
+                // 2018
+                {
+                    title: "Absensi dan Overtime",
+                    category: "Web Development",
+                    categorySlug: "web",
+                    date: "Agustus 2018",
+                    description: "Membuat aplikasi full stack Absensi dan Overtime untuk kebutuhan karyawan Mitratel dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
+                    image: "images/_shadalkane/presensi/presensi.jpg",
+                    tags: ["PHP", "MySQL", "JavaScript", "HTML"]
+                }
+            ];
+
+            // Render portfolio grid
+            function renderProjects(filter = 'all') {
+                const grid = document.getElementById('portfolioGrid');
+                grid.innerHTML = '';
+
+                const filteredProjects = filter === 'all' 
+                    ? portfolioProjects 
+                    : portfolioProjects.filter(p => p.categorySlug === filter);
+
+                if (filteredProjects.length === 0) {
+                    grid.innerHTML = '<div class="loading">Tidak ada project yang ditemukan</div>';
+                    return;
+                }
+
+                filteredProjects.forEach((project, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    
+                    card.innerHTML = `
+                        <img src="${project.image}" alt="${project.title}" class="project-image" onerror="this.src='images/projects/placeholder.jpg'">
+                        <div class="project-content">
+                            <span class="project-category">${project.category}</span>
+                            <h3 class="project-title">${project.title}</h3>
+                            <div class="project-date">
+                                <i class="fas fa-calendar"></i>
+                                ${project.date}
+                            </div>
+                            <p class="project-description">${project.description}</p>
+                            <div class="project-tags">
+                                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    
+                    grid.appendChild(card);
+                });
+
+                // Update project count
+                document.getElementById('projectCount').textContent = filteredProjects.length + '+';
+            }
+
+            // Filter functionality
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filter projects
+                    const filter = this.getAttribute('data-filter');
+                    renderProjects(filter);
+                });
+            });
+
+            // Initial render
+            renderProjects();
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
