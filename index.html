@@ -1,975 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<!-- title -->
-    <title>Farras Majid - Welcome</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-    <meta name="author" content="ShadAlkane">
-    <!-- description -->
-    <meta name="description" content="Welcome to my website, feel free to browse.">
-    <!-- keywords -->
-    <meta name="keywords" content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal, masonry, grid, coming soon, faq">
-    <!-- favicon -->
-    <link rel="shortcut icon" href="images/_shadalkane/icon.png">
-    <!-- favicon -->
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    <!-- style sheets and font icons  -->
-    <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
-    <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
-    <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-    <link rel="stylesheet" type="text/css" href="css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="css/animations.css" />
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
-      @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
-      html {font-size: 15px;}
-      body {font-family: 'Roboto', sans-serif; -webkit-font-smoothing: antialiased; font-size:14px; color:#6f6f6f; font-weight: 400;}
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        margin: 0;
-        position: relative;
-        overflow: hidden;
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="M. Farras Majid - Web Developer, Data Engineer & DevOps Engineer. Portfolio profesional yang menampilkan proyek, skill, dan pengalaman.">
+  <meta name="keywords" content="M. Farras Majid, Web Developer, Data Engineer, DevOps Engineer, Portfolio, Full Stack Developer, Indonesia">
+  <meta name="author" content="M. Farras Majid">
+  <meta name="robots" content="index, follow">
 
-      /* Animated background gradient */
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 20% 50%, rgba(255, 33, 79, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
-        animation: gradient-shift 10s ease infinite;
-        pointer-events: none;
-      }
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="M. Farras Majid - Web Developer | Data Engineer | DevOps Engineer">
+  <meta property="og:description" content="Portfolio profesional M. Farras Majid. Web Developer, Data Engineer & DevOps Engineer.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:url" content="https://mfarrasmajid.id">
 
-      @keyframes gradient-shift {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 0.8; }
-      }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="M. Farras Majid - Portfolio">
+  <meta name="twitter:description" content="Web Developer, Data Engineer & DevOps Engineer.">
 
-      #card-container {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        margin: auto;
-        overflow: hidden;
-        background: transparent;
-        border-radius: 10px;
-      }
+  <title>M. Farras Majid | Web Developer &bull; Data Engineer &bull; DevOps Engineer</title>
 
-      /* Enhanced card with modern styling */
-      .card {
-        touch-action: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-origin: center center;
-        width: 500px;
-        aspect-ratio: 3/4;
-        background: white;
-        border-radius: 24px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3), 
-                    0 0 1px rgba(0,0,0,0.05);
-        overflow: hidden;
-        cursor: grab;
-        user-select: none;
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                    opacity 0.4s ease,
-                    box-shadow 0.3s ease;
-        will-change: transform, opacity;
-      }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/icon-shadalkane.png">
 
-      .card:active {
-        cursor: grabbing;
-      }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-      .card.show {
-        opacity: 1;
-      }
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-      /* Glass morphism effect on hover */
-      .card:hover {
-        box-shadow: 0 24px 80px rgba(0,0,0,0.4),
-                    0 0 1px rgba(255, 33, 79, 0.2);
-      }
-      
-      .containercustom {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-      }
-      
-      /* Modern logo styling with fade in */
-      .logo {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        width: 200px;
-        height: auto;
-        z-index: 10;
-        filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-        animation: fadeInLeft 0.6s ease-out;
-      }
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
-      @keyframes fadeInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      
-      /* Modern link with glass effect */
-      .link-text {
-        position: absolute;
-        bottom: 110px;
-        right: 20px;
-        padding: 10px 20px;
-        color: #fafafa;
-        font-weight: 600;
-        font-size: 15px;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 50px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-        animation: fadeInRight 0.6s ease-out 0.3s both;
-      }
-
-      .link-text:hover {
-        background: rgba(255, 33, 79, 0.8);
-        border-color: rgba(255, 33, 79, 1);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(255, 33, 79, 0.4);
-      }
-
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      /* Enhanced image styling */
-      .cover-top, .cover-bottom, .cover-left, .cover-right, .cover-center {
-        border: 8px solid #e0e0e0; 
-        width: 100%; 
-        height: 400px; 
-        border-radius: 16px; 
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-      .cover-top { object-position: center top;}
-      .cover-bottom {object-position: center bottom;}
-      .cover-left {object-position: center left;}
-      .cover-right {object-position: center right;}
-      .cover-center {object-position: center center;}
-      
-      .icon {
-        width: 200px; 
-        text-align: center; 
-        margin-top: 100px; 
-        margin-bottom: 100px; 
-        border: 0px;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-        transition: transform 0.3s ease;
-      }
-
-      .icon:hover {
-        transform: scale(1.05);
-      }
-      
-      /* Modern card typography */
-      .card-title {
-        font-size: 1.5rem; 
-        font-weight: 700; 
-        margin-top: 20px; 
-        margin-bottom: 10px; 
-        color: #222222;
-        font-family: 'Montserrat', sans-serif;
-      }
-      
-      .card-text {
-        font-size: 1rem; 
-        color: #555555; 
-        line-height: 1.6; 
-        padding: 12px 16px; 
-        background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
-        border-radius: 12px;
-        border-left: 4px solid #ff214f;
-      }
-      
-      .card-body {
-        padding-top: 0px !important;
-      }
-      
-      .card-header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        border-bottom: 0px !important;
-      }
-      
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        body::before {
-          opacity: 0.3;
-        }
-        
-        .logo {
-          width: 150px;
-          top: 20px;
-          left: 20px;
-        }
-        
-        .link-text {
-          bottom: 100px;
-          right: 10px;
-          font-size: 13px;
-          padding: 8px 16px;
-        }
-        
-        .cover-top, .cover-bottom, .cover-left, .cover-right, .cover-center { 
-          height: 150px;
-          border-width: 6px;
-        }
-        
-        .icon {
-          width: 130px; 
-          text-align: center; 
-          margin-top: 10px; 
-          margin-bottom: 10px; 
-          border: 0px;
-        }
-        
-        .card {
-          width: 85%;
-          font-size: 1rem;
-          border-radius: 20px;
-        }
-        
-        .card-title {
-          font-size: 1.1rem;
-        }
-        
-        .card-text {
-          font-size: 0.85rem;
-          padding: 10px 14px;
-        }
-      }
-    </style>
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "M. Farras Majid",
+    "jobTitle": ["Web Developer", "Data Engineer", "DevOps Engineer"],
+    "url": "https://mfarrasmajid.id",
+    "sameAs": [
+      "https://linkedin.com/in/m-farras-majid",
+      "https://github.com/mfarrasmajid"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="containercustom">
-    <img src="images/_shadalkane/logo-white.png" alt="Logo" class="logo" />
-    <a href="profile.html" class="link-text">Lihat Semua >></a>
-    <div id="card-container"></div>
-    <div id="progress-bar-container" style="position:absolute; bottom: 50px; left: 20px; right: 20px; width: calc(100% - 40px); z-index: 15; animation: fadeInUp 0.6s ease-out 0.6s both;">
-      <div id="progress-bar" style="height: 8px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 50px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-        <div id="progress-bar-fill" style="height: 100%; width: 0; background: linear-gradient(90deg, #ff214f 0%, #ff6b6b 100%); transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 20px rgba(255, 33, 79, 0.5);"></div>
-      </div>
-      <div id="progress-bar-text" style="color: #fafafa; margin-top: 8px; font-size: 14px; text-align: right; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
-    </div>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-spinner"></div>
   </div>
 
-<script>
-let totalCards = 0;
-const shownCardIndexes = new Set();
+  <!-- Background Decoration -->
+  <div class="bg-decoration">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
 
-const container = document.getElementById("card-container");
-
-function getRandomPosition(container) {
-  const containerRect = container.getBoundingClientRect();
-  const maxX = containerRect.width - 150; // card width offset
-  const maxY = containerRect.height - 200; // card height offset
-  return {
-    x: Math.random() * maxX,
-    y: Math.random() * maxY
-  };
-}
-
-function createCard({ imgSrc, altText, date, title, description, classs}, delay, cardIndex) {
-  const card = document.createElement("div");
-  card.className = "card card-flush";
-  card.setAttribute("data-category", "Projects");
-
-  card.innerHTML = `
-    <div class="card-header">
-      <img src="${imgSrc}" alt="${altText}" class="${classs}">
-      <div class="card-title"><span class="text-muted">${date}</span> - ${title}</div>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Farras<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-hire-btn">🚀 Hire Me</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="card-body">
-      <div class="card-text">${description}</div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Available for freelance work
+        </div>
+        <h1>Hi, I'm <span>M. Farras</span><br>Majid</h1>
+        <p class="hero-roles">
+          <span class="typing-text" id="typingText"></span>
+        </p>
+        <p class="hero-desc">
+          Seorang profesional yang berpengalaman dalam membangun website modern, 
+          mengelola data pipeline, dan mengotomasi infrastruktur. Siap membantu 
+          mewujudkan solusi digital terbaik untuk bisnis Anda.
+        </p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Hire Me
+          </a>
+          <a href="#projects" class="btn-outline">
+            <i class="fas fa-eye"></i> Lihat Portfolio
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Projects</p>
+          </div>
+          <div class="stat-item">
+            <h3>30+</h3>
+            <p>Clients</p>
+          </div>
+          <div class="stat-item">
+            <h3>8+</h3>
+            <p>Years Exp</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image fade-in-right">
+        <div class="hero-image-wrapper">
+          <img src="images/farras-majid.jpg" alt="M. Farras Majid - Web Developer, Data Engineer, DevOps Engineer" loading="eager">
+          <div class="hero-floating-card glass card-1">
+            <i class="fas fa-code"></i> Web Developer
+          </div>
+          <div class="hero-floating-card glass card-2">
+            <i class="fas fa-database"></i> Data Engineer
+          </div>
+        </div>
+      </div>
     </div>
-  `;
+  </section>
 
-  // Random scatter rotation and offset
-  const baseAngle = (Math.random() * 50) - 25;
-  const baseOffsetX = (Math.random() * 100) - 50;
-  const baseOffsetY = (Math.random() * 100) - 50;
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Mengenal Lebih Dekat <span>Tentang Saya</span></h2>
+        <p class="section-desc">Berpengalaman dalam membangun solusi digital end-to-end, dari frontend hingga infrastruktur cloud.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-image fade-in-left">
+          <img src="images/about.jpg" alt="M. Farras Majid working">
+          <div class="experience-badge glass">
+            <h3>8+</h3>
+            <p>Tahun Pengalaman</p>
+          </div>
+        </div>
+        <div class="about-content fade-in-right">
+          <h3>Web Developer, <span>Data Engineer</span> & DevOps Engineer</h3>
+          <p>
+            Saya adalah seorang profesional IT yang menguasai tiga bidang utama: 
+            web development, data engineering, dan DevOps. Dengan pengalaman lebih dari 8 tahun, 
+            saya telah membantu berbagai perusahaan dan klien dalam membangun aplikasi web modern, 
+            merancang data pipeline yang efisien, dan mengimplementasikan praktik CI/CD yang handal.
+          </p>
+          <p>
+            Saya percaya bahwa teknologi terbaik adalah yang mampu memberikan dampak nyata 
+            bagi bisnis. Oleh karena itu, saya selalu berusaha memberikan solusi yang tidak 
+            hanya canggih secara teknis, namun juga praktis dan scalable.
+          </p>
+          <div class="about-info">
+            <div class="about-info-item glass-sm">
+              <i class="fas fa-user"></i>
+              <div>
+                <span class="info-label">Nama</span>
+                <span class="info-value">M. Farras Majid</span>
+              </div>
+            </div>
+            <div class="about-info-item glass-sm">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span class="info-label">Email</span>
+                <span class="info-value">muhammad.farras@mitratel.co.id</span>
+              </div>
+            </div>
+            <div class="about-info-item glass-sm">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="info-label">Lokasi</span>
+                <span class="info-value">Indonesia</span>
+              </div>
+            </div>
+            <div class="about-info-item glass-sm">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <span class="info-label">Status</span>
+                <span class="info-value">Available</span>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Hubungi Saya
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  let isDragging = false;
-  let startX = 0;
-  let startY = 0;
-  let currentX = 0;
-  let currentY = 0;
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">My Skills</span>
+        <h2 class="section-title">Keahlian & <span>Teknologi</span></h2>
+        <p class="section-desc">Stack teknologi yang saya kuasai untuk membangun solusi digital terbaik.</p>
+      </div>
+      <div class="skills-grid">
+        <!-- Web Development -->
+        <div class="skill-category glass fade-in">
+          <div class="skill-category-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>HTML / CSS / JS</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>PHP / Laravel</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>Flutter</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>Python</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>React Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    // const pos = getRandomPosition(container);
-    // card.style.left = `${pos.x}px`;
-    // card.style.top = `${pos.y}px`;
+        <!-- Data Engineering -->
+        <div class="skill-category glass fade-in">
+          <div class="skill-category-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Data Engineering</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>Apache Airflow</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>ClickHouse</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>PostgreSQL / MySQL / MariaDB</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>SAP CDC</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>REST API</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  // Initial placement (hidden, smaller scale)
-  card.style.transform = `translate(-50%, -50%) translate(${baseOffsetX}px, ${baseOffsetY}px) rotate(${baseAngle}deg) scale(0.9)`;
-  container.appendChild(card);
+        <!-- DevOps -->
+        <div class="skill-category glass fade-in">
+          <div class="skill-category-icon">
+            <i class="fas fa-infinity"></i>
+          </div>
+          <h3>DevOps Engineering</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>Docker / K8s</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>Rancher Kubernetes</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>GitHub / GitLab</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>CI/CD Pipeline</span>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <i class="fas fa-check-circle"></i>
+                <span>Linux RedHat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Delay fade-in
-  setTimeout(() => {
-    card.classList.add("show");
-    shownCardIndexes.add(cardIndex);
-    updateProgressBar();
-    card.style.transform = `translate(-50%, -50%) translate(${baseOffsetX}px, ${baseOffsetY}px) rotate(${baseAngle}deg) scale(1)`;
-  }, delay);
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">My Work</span>
+        <h2 class="section-title">Proyek <span>Terbaru</span></h2>
+        <p class="section-desc">Beberapa proyek terbaik yang telah saya kerjakan untuk berbagai klien dan kebutuhan.</p>
+      </div>
 
-  // Drag logic
-  card.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    card.setPointerCapture(e.pointerId);
-    card.style.transition = "none";
-  });
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass fade-in" data-category="data">
+          <div class="project-thumb" onclick="openLightbox('images/projects/work-1.jpg', 'DWH Pipeline Manager')">
+            <img src="images/projects/work-1.jpg" alt="DWH Pipeline Manager">
+            <div class="project-overlay">
+              <span class="overlay-zoom" aria-label="Zoom gambar"><i class="fas fa-search-plus"></i></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>Data Engineering</span>
+              <span>Airflow</span>
+              <span>ClickHouse</span>
+            </div>
+            <h3>DWH Pipeline Manager</h3>
+            <p>Platform manajemen pipeline data warehouse enterprise yang mengorkestrasikan aliran data secara end-to-end, mulai dari berbagai data source hingga ke lakehouse dan datamart dengan monitoring real-time.</p>
+          </div>
+        </div>
 
-  card.addEventListener("pointermove", (e) => {
-    if (!isDragging) return;
-    currentX = e.clientX - startX;
-    currentY = e.clientY - startY;
-    card.style.transform =
-      `translate(-50%, -50%) translate(${baseOffsetX + currentX}px, ${baseOffsetY + currentY}px) rotate(${baseAngle + currentX / 20}deg)`;
-  });
+        <!-- Project 2 -->
+        <div class="project-card glass fade-in" data-category="web">
+          <div class="project-thumb" onclick="openLightbox('images/projects/work-2.jpg', 'API Manager Mitratel')">
+            <img src="images/projects/work-2.jpg" alt="API Manager">
+            <div class="project-overlay">
+              <span class="overlay-zoom" aria-label="Zoom gambar"><i class="fas fa-search-plus"></i></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>REST API</span>
+              <span>Laravel</span>
+              <span>PostgreSQL</span>
+            </div>
+            <h3>API Manager Mitratel</h3>
+            <p>Sistem manajemen API terpusat untuk Mitratel yang menangani autentikasi, logging, rate limiting, serta monitoring penggunaan API secara komprehensif dan real-time.</p>
+          </div>
+        </div>
 
-  card.addEventListener("pointerup", (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-    card.releasePointerCapture(e.pointerId);
+        <!-- Project 3 -->
+        <div class="project-card glass fade-in" data-category="web">
+          <div class="project-thumb" onclick="openLightbox('images/projects/work-3.jpg', 'Inhouse App Mitratel')">
+            <img src="images/projects/work-3.jpg" alt="Inhouse App Mitratel">
+            <div class="project-overlay">
+              <span class="overlay-zoom" aria-label="Zoom gambar"><i class="fas fa-search-plus"></i></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>Laravel</span>
+              <span>Kubernetes</span>
+              <span>CI/CD</span>
+            </div>
+            <h3>Inhouse App Mitratel</h3>
+            <p>Aplikasi enterprise internal Mitratel yang dirancang untuk mendukung kegiatan operasional seluruh unit bisnis, mencakup workflow automation, reporting, dan integrasi antar departemen.</p>
+          </div>
+        </div>
+      </div>
 
-    // Swipe far enough → remove
-    if (Math.abs(currentX) > 100 || Math.abs(currentY) > 100) {
-      card.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-      card.style.opacity = "0";
-      card.style.transform =
-        `translate(-50%, -50%) translate(${baseOffsetX + currentX * 2}px, ${baseOffsetY + currentY * 2}px) rotate(${baseAngle + currentX / 10}deg)`;
-      setTimeout(() => {
-        card.remove();
-        checkEmpty();
-        updateProgressBar();
-      }, 300);
-    } else {
-      // Snap back
-      card.style.transition = "transform 0.3s ease";
-      card.style.transform =
-        `translate(-50%, -50%) translate(${baseOffsetX}px, ${baseOffsetY}px) rotate(${baseAngle}deg)`;
-    }
-  });
-}
+      <div class="text-center mt-2 fade-in">
+        <a href="projects.html" class="btn-outline" style="margin-top: 40px;">
+          <i class="fas fa-th-large"></i> Lihat Semua Proyek
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <!-- ==================== BLOG SECTION ==================== -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Blog</span>
+        <h2 class="section-title">Artikel <span>Terbaru</span></h2>
+        <p class="section-desc">Sharing pengetahuan dan pengalaman seputar teknologi, development, dan engineering.</p>
+      </div>
 
+      <div class="blog-grid">
+        <!-- Blog 1 -->
+        <div class="blog-card glass fade-in">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*NhCjwIeMzomviGGCQqEhCA.png" alt="Datawarehousing">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">Data Engineering</span>
+              <span><i class="far fa-calendar"></i> 7 Nov 2025</span>
+            </div>
+            <h3>Datawarehousing, Bagaimana Cara Mudahnya?</h3>
+            <p>Banyak tim menunda membangun data warehouse karena takut rumit dan mahal. Padahal, kuncinya bukan pada alat paling canggih, melainkan fokus, desain sederhana, dan eksekusi yang disiplin.</p>
+            <a href="https://medium.com/@m.farras.majid/datawarehousing-bagaimana-cara-mudahnya-72ccb2225d7f" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
 
-function updateProgressBar() {
-  const shown = shownCardIndexes.size;
-  const percent = totalCards === 0 ? 0 : (shown / totalCards) * 100;
-  document.getElementById('progress-bar-fill').style.width = percent + "%";
-  document.getElementById('progress-bar-text').textContent = `${shown} / ${totalCards} cards shown`;
-}
+        <!-- Blog 2 -->
+        <div class="blog-card glass fade-in">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*Tl8Ksshv7nA5C-ZOgFESxQ.png" alt="Observability Stack Kubernetes">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">DevOps</span>
+              <span><i class="far fa-calendar"></i> 5 Nov 2025</span>
+            </div>
+            <h3>Membangun Observability Stack di Kubernetes</h3>
+            <p>Observability adalah kombo tiga serangkai: metrics, logs, dan traces. Stack Prometheus, Loki, Tempo, dan Grafana menjadi solusi open-source yang battle-tested.</p>
+            <a href="https://medium.com/@m.farras.majid/membangun-observability-stack-di-kubernetes-prometheus-loki-grafana-tempo-ad2177b270eb" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
 
-function generateCards() {
-  const projects = [
-    // 2025
-    {
-      imgSrc: "images/_shadalkane/corsec-oneflux/corsec-oneflux-4.png",
-      altText: "Corsec OneFlux",
-      date: "Oktober 2025",
-      title: "Corsec OneFlux v2.0",
-      description: "Membuat aplikasi full stack Corsec OneFlux v2.0 untuk kebutuhan unit Corsec dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/dwh-monitoring/dwh-monitoring.png",
-      altText: "DWH Monitoring",
-      date: "Oktober 2025",
-      title: "DWH Monitoring",
-      description: "Membuat otomatisasi pipelining dari Data Source ke Datawarehouse dengan menggunakan Airflow Apache sebagai pipeline, Clickhouse sebagai Datawarehouse, dan Laravel sebagai UI.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/finance-oneflux/finance-oneflux-3.png",
-      altText: "Finance OneFlux",
-      date: "Agustus 2025",
-      title: "Finance OneFlux v2.0",
-      description: "Membuat aplikasi full stack Finance OneFlux v2.0 untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/certification/sap.jpeg",
-      altText: "SAP",
-      date: "Mei 2025",
-      title: "Certification: Intermediate ABAP Programming",
-      description: "Pelatihan bahasa pemrograman ABAP untuk development SAP dari pengelola pelatihan Trainocate.",
-      classs: "cover cover-center"
-    },
-    {
-      imgSrc: "images/icons/clickhouse.svg",
-      altText: "ClickHouse",
-      date: "Maret 2025",
-      title: "Skill: ClickHouse",
-      description: "Menguasai keahlian penggunaan Clickhouse dalam penyimpanan big data Mitratel.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/airflow.png",
-      altText: "Airflow",
-      date: "Maret 2025",
-      title: "Skill: Apache AirFlow",
-      description: "Menguasai keahlian penggunaan Apache AirFlow dalam proses pipeline ETL dalam lingkup DataWareHouse.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/_shadalkane/it-oneflux/it-oneflux-4.png",
-      altText: "IT OneFlux",
-      date: "Maret 2025",
-      title: "IT OneFlux v2.0",
-      description: "Membuat aplikasi full stack IT OneFlux v2.0 untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/pmo-oneflux/pmo-oneflux-1.png",
-      altText: "PMO OneFlux",
-      date: "Februari 2025",
-      title: "PMO OneFlux v2.0",
-      description: "Membuat aplikasi full stack PMO OneFlux v2.0 untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/icons/jira.png",
-      altText: "Jira",
-      date: "Januari 2025",
-      title: "Skill: Jira",
-      description: "Menguasai keahlian penggunaan jira dalam tracking aktivitas harian, management timeline, dan koordinasi dengan sesama tim IT.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/sonarqube.svg",
-      altText: "Sonarqube",
-      date: "Januari 2025",
-      title: "Skill: Docker",
-      description: "Menguasai keahlian penggunaan sonarqube dalam scanning vulnerabilities baik di dalam source code maupun di dalam sistem.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/docker.png",
-      altText: "Docker",
-      date: "Januari 2025",
-      title: "Skill: Docker",
-      description: "Menguasai keahlian penggunaan docker dalam penggunaan deployment aplikasi dengan menggunakan basis container.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/jenkins.png",
-      altText: "Jenkins",
-      date: "Januari 2025",
-      title: "Skill: Jenkins",
-      description: "Menguasai keahlian penggunaan Jenkins sebagai pipeline CI/CD dalam development agile.",
-      classs: "icon"
-    },
-    // 2024
-    {
-      imgSrc: "images/_shadalkane/hcm-oneflux/hcm-oneflux-1.png",
-      altText: "HCM OneFlux",
-      date: "Desember 2024",
-      title: "HCM OneFlux v2.0",
-      description: "Membuat aplikasi full stack HCM OneFlux v2.0 untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/tracking-spmk/tracking-spmk-1.png",
-      altText: "Tracking SPMK",
-      date: "November 2024",
-      title: "Tracking SPMK",
-      description: "Membuat aplikasi full stack Tracking SPMK untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/certification/top-learners.jpeg",
-      altText: "Top Learners",
-      date: "Oktober 2024",
-      title: "Certification: Top Learners Google Career",
-      description: "Penghargaan dari Google Career Certification x Telkom sebagai Top Learners 2024.",
-      classs: "cover cover-center"
-    },
-    {
-      imgSrc: "images/_shadalkane/dashboard-bbws/dashboard-bbws-1.png",
-      altText: "Dashboard BBWS",
-      date: "September 2024",
-      title: "Dashboard BBWS",
-      description: "Membuat aplikasi full stack Dashboard BBWS untuk kebutuhan unit BBWS Brantas dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-right"
-    },
-    {
-      imgSrc: "images/_shadalkane/finance-pst/finance-pst.png",
-      altText: "Finance PST",
-      date: "September 2024",
-      title: "Finance PST",
-      description: "Membuat aplikasi full stack Finance PST untuk kebutuhan unit PST dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/finance-oneflux/finance-oneflux-1.png",
-      altText: "Finance OneFlux",
-      date: "Juni 2024",
-      title: "Finance OneFlux",
-      description: "Membuat aplikasi full stack Finance OneFlux untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/aspirasi/aspirasi-1.png",
-      altText: "Aspirasi",
-      date: "Juni 2024",
-      title: "Talent Scouting",
-      description: "Membuat aplikasi full stack Talent Scouting untuk kebutuhan unit HCM dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    // 2023
-    {
-      imgSrc: "images/certification/secure-development.png",
-      altText: "Secure Development",
-      date: "Agustus 2023",
-      title: "Certification: Secure Development Life Cycle",
-      description: "Sertifikasi pelatihan Secure Development Life Cycle dari pengelola pelatihan Cyber Academy.",
-      classs: "cover cover-center"
-    },
-    {
-      imgSrc: "images/_shadalkane/pmo-oneflux/pmo-1.png",
-      altText: "PMO OneFlux",
-      date: "September 2023",
-      title: "PMO OneFlux v1.0",
-      description: "Membuat aplikasi full stack PMO OneFlux untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/_shadalkane/corsec-oneflux/corsec-oneflux-1.png",
-      altText: "Corsec OneFlux",
-      date: "September 2023",
-      title: "Corsec OneFlux v1.0",
-      description: "Membuat aplikasi full stack Corsec OneFlux untuk kebutuhan unit Corsec dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/transport-management/transport-management-1.png",
-      altText: "Transport Management",
-      date: "September 2023",
-      title: "Transport Management",
-      description: "Membuat aplikasi mobile Transport Management untuk kebutuhan unit Corsec dengan menggunakan stack Flutter dan Laravel.",
-      classs: "cover cover-center"
-    },
-    {
-      imgSrc: "images/icons/flutter.png",
-      altText: "Flutter",
-      date: "September 2023",
-      title: "Skill: Flutter",
-      description: "Menguasai keahlian bahasa pemrograman Flutter untuk development Mobile android dan ios development",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/certification/flutter-and-dart.png",
-      altText: "Flutter and Dart",
-      date: "Agustus 2023",
-      title: "Certification: Flutter and Dart",
-      description: "Sertifikasi pelatihan Flutter dan Dart dari pengelola pelatihan Udemy.",
-      classs: "cover cover-center"
-    },
-    {
-      imgSrc: "images/_shadalkane/it-oneflux/it-oneflux-1.png",
-      altText: "IT OneFlux",
-      date: "Agustus 2023",
-      title: "IT OneFlux v1.0",
-      description: "Membuat aplikasi full stack IT OneFlux untuk kebutuhan unit IT dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/gopro/gopro-1.png",
-      altText: "Gopro",
-      date: "Juli 2023",
-      title: "Gopro",
-      description: "Membuat aplikasi full stack Gopro untuk kebutuhan unit Construction dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/dashboard-construction/dashboard-construction-1.png",
-      altText: "Dashboard Construction",
-      date: "Maret 2023",
-      title: "Dashboard Construction",
-      description: "Membuat aplikasi full stack Dashboard Construction untuk kebutuhan unit Construction dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    // 2022
-    {
-      imgSrc: "images/_shadalkane/cme/cme-1.png",
-      altText: "CME",
-      date: "November 2022",
-      title: "CME",
-      description: "Membuat aplikasi full stack Absensi CME untuk kebutuhan unit Manage Service dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/_shadalkane/catalyst/catalyst-1.png",
-      altText: "Catalyst",
-      date: "September 2022",
-      title: "Catalyst",
-      description: "Membuat aplikasi full stack Catalyst untuk kebutuhan unit Finance dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/_shadalkane/mesop/mesop-1.png",
-      altText: "Mesop",
-      date: "September 2022",
-      title: "MESOP Mitratel",
-      description: "Membuat aplikasi full stack Mesop Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/hcm-oneflux/hcm-1.png",
-      altText: "HCM OneFlux",
-      date: "Juli 2022",
-      title: "HCM OneFlux v1.0",
-      description: "Membuat aplikasi full stack HCM OneFlux untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/icons/figma.png",
-      altText: "Figma",
-      date: "Mei 2022",
-      title: "Skill: Figma",
-      description: "Menguasai penggunaan Figma untuk kolaborasi pembuatan dan desain mockup aplikasi.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/_shadalkane/karir/karir-1.png",
-      altText: "Karir",
-      date: "Mei 2022",
-      title: "Karir Mitratel",
-      description: "Membuat aplikasi full stack Karir Mitratel untuk kebutuhan unit Human Capital Management dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/_shadalkane/absensi-radir/absensi-radir-1.png",
-      altText: "Absensi Radir",
-      date: "Maret 2022",
-      title: "Absensi Radir",
-      description: "Membuat aplikasi full stack Absensi Radir untuk kebutuhan unit Corporate Office dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-      classs: "cover cover-bottom"
-    },
-    // 2021
-    {
-      imgSrc: "images/_shadalkane/dashboard-ipo/dashboard-ipo-1.png",
-      altText: "Dashboard IPO",
-      date: "Agustus 2021",
-      title: "Dashboard IPO",
-      description: "Membuat aplikasi full stack Dashboard IPO untuk kebutuhan IPO Mitratel dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/icons/pentaho.webp",
-      altText: "Pentaho",
-      date: "Maret 2021",
-      title: "Skill: Pentaho",
-      description: "Menguasai keahlian penggunaan aplikasi Pentaho untuk ETL DataWareHouse.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/career/career4.png",
-      altText: "Career4",
-      date: "Januari 2021",
-      title: "Officer 2 IT Apps Development & System Analyst",
-      description: "Promosi sebagai officer 2 IT Apps Development & System Analyst. Menghandle inhouse app development (web dan mobile apps) dan datawarehouse di Mitratel.",
-      classs: "cover cover-left"
-    },
-    // 2020
-    {
-      imgSrc: "images/_shadalkane/tania/tania-1.png",
-      altText: "Tania",
-      date: "Desember 2020",
-      title: "Tania",
-      description: "Membuat aplikasi full stack Tania untuk kebutuhan mitra PT GEAF dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/_shadalkane/pmo-oneflux/womtools-1.png",
-      altText: "WOMTools",
-      date: "Agustus 2020",
-      title: "WOMTools",
-      description: "Membuat aplikasi full stack WOMTools untuk kebutuhan unit PMO dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/icons/laravel.png",
-      altText: "Laravel",
-      date: "Juli 2020",
-      title: "Skill: Laravel",
-      description: "Menguasai development aplikasi PHP dengan menggunakan framework Laravel.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/react.webp",
-      altText: "React Native",
-      date: "Mei 2020",
-      title: "Skill: React Native",
-      description: "Menguasai penggunaan framework React Native untuk development frontend aplikasi mobile.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/node.webp",
-      altText: "Node",
-      date: "Mei 2020",
-      title: "Skill: Node",
-      description: "Menguasai penggunaan framework NodeJS untuk development backend aplikasi mobile.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/_shadalkane/presensi/presensi.jpg",
-      altText: "Presensi",
-      date: "Maret 2020",
-      title: "Replika (Request Aplikasi)",
-      description: "Membuat aplikasi full stack Replika (Request Aplikasi) untuk kebutuhan unit IT dengan menggunakan stack Codeigniter, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/icons/codeigniter.png",
-      altText: "Codeigniter",
-      date: "Februari 2020",
-      title: "Skill: Codeigniter",
-      description: "Menguasai development aplikasi PHP dengan menggunakan framework Codeigniter.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/_shadalkane/douglas/douglas-1.png",
-      altText: "Douglas",
-      date: "Februari 2020",
-      title: "Douglas",
-      description: "Membuat aplikasi full stack Douglas untuk kebutuhan unit Legal dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/_shadalkane/presensi/presensi.jpg",
-      altText: "Comando",
-      date: "Januari 2020",
-      title: "Comando",
-      description: "Membuat aplikasi full stack Comando untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    // 2019
-    {
-      imgSrc: "images/_shadalkane/pmo-oneflux/kmonline-1.png",
-      altText: "KM Online",
-      date: "November 2019",
-      title: "KM Online",
-      description: "Membuat aplikasi full stack KM Online untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    {
-      imgSrc: "images/icons/github.png",
-      altText: "GitHub",
-      date: "Oktober 2019",
-      title: "Skill: Git",
-      description: "Menguasai pengelolaan source code di repository git terutama di GitHub.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/_shadalkane/sdm/sdm-1.png",
-      altText: "SDM",
-      date: "September 2019",
-      title: "Absensi dan Overtime SDM",
-      description: "Membuat aplikasi full stack Absensi dan Overtime untuk karyawan outsource di SDM dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-left"
-    },
-    {
-      imgSrc: "images/_shadalkane/pmo-oneflux/motor-1.png",
-      altText: "Motor",
-      date: "Juni 2019",
-      title: "Motor (Monitoring Radir)",
-      description: "Membuat aplikasi full stack Motor (Monitoring Radir) untuk kebutuhan unit PMO dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-bottom"
-    },
-    // 2018
-    {
-      imgSrc: "images/_shadalkane/presensi/presensi.jpg",
-      altText: "Presensi",
-      date: "Agustus 2018",
-      title: "Absensi dan Overtime",
-      description: "Membuat aplikasi full stack Absensi dan Overtime untuk kebutuhan karyawan Mitratel dengan menggunakan stack PHP, HTML, CSS, Javascript, dan MySQL",
-      classs: "cover cover-right"
-    },
-    {
-      imgSrc: "images/icons/linux.png",
-      altText: "Linux",
-      date: "Mei 2018",
-      title: "Skill: Linux-Based Server",
-      description: "Menguasai pengelolaan server berbasis linus, terutama pada versi Centos, Almalinux, dan Ubuntu.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/postgresql.png",
-      altText: "PostgreSQL",
-      date: "Mei 2018",
-      title: "Skill: PostgreSQL",
-      description: "Menguasai keahlian database dan query PostgreSQL sebagai penyimpanan data dari aplikasi web.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/mysql.svg",
-      altText: "MySQL",
-      date: "Mei 2018",
-      title: "Skill: MySQL",
-      description: "Menguasai keahlian database dan query MySQL sebagai penyimpanan data dari aplikasi web.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/javascript.png",
-      altText: "Javascript",
-      date: "Mei 2018",
-      title: "Skill: JS",
-      description: "Menguasai keahlian bahasa aplikasi javascrit untuk membuat backend aplikasi web.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/css.png",
-      altText: "CSS",
-      date: "Mei 2018",
-      title: "Skill: CSS",
-      description: "Menguasai keahlian styling web CSS untuk membuat tampilan aplikasi web.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/html5.png",
-      altText: "HTML5",
-      date: "Mei 2018",
-      title: "Skill: HTML5",
-      description: "Menguasai keahlian markup language HTML5 untuk membuat aplikasi web.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/icons/php.svg",
-      altText: "PHP",
-      date: "Mei 2018",
-      title: "Skill: PHP",
-      description: "Menguasai keahlian development PHP untuk membuat aplikasi web dengan web server Apache.",
-      classs: "icon"
-    },
-    {
-      imgSrc: "images/career/career3.png",
-      altText: "Career3",
-      date: "April 2018",
-      title: "Officer 3 IT Development",
-      description: "Mutasi ke unit Information & Technology di Mitratel sebagai Officer 3 IT Development. Memegang web development aplikasi baru dari request kebutuhan unit-unit di Mitratel.",
-      classs: "cover cover-left"
-    },
-    // 2017
-    {
-      imgSrc: "images/career/career2.jpg",
-      altText: "Career2",
-      date: "Februari 2017",
-      title: "Staff Planning PSC B2S",
-      description: "Mulai kerja sebagai staff planning PSC B2S. Menghandle data performansi dan achievement unit B2S di Mitratel (Construction & Sales).",
-      classs: "cover cover-bottom"
-    },
-    // 2016
-    {
-      imgSrc: "images/career/career1.jpg",
-      altText: "Career1",
-      date: "Oktober 2016",
-      title: "Great People Training Program I Mitratel",
-      description: "Mengikuti program training karyawan tetap PT Dayamitra Telekomunikasi dengan jangka waktu 4 bulan (Oktober 2015 - Januari 2016).",
-      classs: "cover cover-top"
-    },
-    // 2015
-    {
-      imgSrc: "images/career/college1.jpg",
-      altText: "College1",
-      date: "Oktober 2015",
-      title: "Wisuda Oktober Institut Teknologi Bandung",
-      description: "Lulus pada bulan Oktober 2015 dari Institut Teknologi Bandung jurusan Teknik Elektro dengan gelar Sarjana Teknik (S.T.)",
-      classs: "cover cover-top"
-    },
-    {
-      imgSrc: "images/icons/photoshop.png",
-      altText: "Photoshop",
-      date: "Oktober 2015",
-      title: "Skill: Photoshop",
-      description: "Menguasai keahlian Adobe Photoshop dengan berbagai projects yang dihasilkan dari kegiatan kuliah di ITB.",
-      classs: "icon"
-    }
-  ];
+        <!-- Blog 3 -->
+        <div class="blog-card glass fade-in">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*gFg9asuWvW2Zrpi5Fb_9kQ.png" alt="Docker Compose vs Kubernetes">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">DevOps</span>
+              <span><i class="far fa-calendar"></i> 4 Nov 2025</span>
+            </div>
+            <h3>Docker Compose vs Kubernetes: Kapan Harus Beralih ke K8s?</h3>
+            <p>Banyak tim memulai perjalanan kontainerisasi dengan Docker Compose karena kesederhanaannya. Namun seiring aplikasi tumbuh, kebutuhan operasional ikut meningkat.</p>
+            <a href="https://medium.com/@m.farras.majid/docker-compose-vs-kubernetes-kapan-harus-beralih-ke-k8s-8a3ee759c4f0" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
 
-  const selectedImages = getRandomImages(projects, 5);
+      <div class="text-center mt-2 fade-in">
+        <a href="blog.html" class="btn-outline" style="margin-top: 40px;">
+          <i class="fas fa-newspaper"></i> Lihat Semua Artikel
+        </a>
+      </div>
+    </div>
+  </section>
 
-  totalCards = projects.length;
+  <!-- ==================== CTA SECTION ==================== -->
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <div class="glass fade-in" style="padding: 60px; text-align: center; border: 1px solid rgba(230,57,70,0.2);">
+        <h2 class="section-title" style="margin-bottom: 16px;">Punya Proyek <span>Menarik?</span></h2>
+        <p class="section-desc" style="margin-bottom: 32px;">
+          Saya selalu terbuka untuk diskusi proyek baru, ide kreatif, atau kesempatan kolaborasi. 
+          Mari berbicara dan wujudkan ide Anda bersama!
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-primary">
+            <i class="fas fa-rocket"></i> Let's Talk
+          </a>
+          <a href="https://linkedin.com/in/m-farras-majid" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Ambil index random unik
-  const allIndexes = Array.from({length: projects.length}, (_, i) => i);
-  const shuffledIndexes = allIndexes.sort(() => Math.random() - 0.5);
-  const selectedIndexes = shuffledIndexes.slice(0, 5);
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Farras<span>.</span></a>
+          <p>Web Developer, Data Engineer & DevOps Engineer. Membangun solusi digital yang inovatif dan scalable untuk bisnis Anda.</p>
+          <div class="footer-social">
+            <a href="https://github.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/m-farras-majid" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <!-- <a href="https://twitter.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+            <a href="https://instagram.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="contact.html">Data Engineering</a></li>
+            <li><a href="contact.html">DevOps Consulting</a></li>
+            <li><a href="contact.html">Cloud Architecture</a></li>
+            <li><a href="contact.html">Technical Writing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe untuk mendapatkan artikel dan tips terbaru langsung ke inbox Anda.</p>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 M. Farras Majid. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  selectedIndexes.forEach((cardIndex, i) => {
-    const img = projects[cardIndex];
-    createCard(img, i * 400, cardIndex);
-  });
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-  setTimeout(updateProgressBar, 500);
-}
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Tutup">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" alt="" onclick="event.stopPropagation()">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
 
-function getRandomImages(arr, count) {
-  // Copy array agar array aslinya tidak berubah
-  const copy = arr.slice();
-  return copy.sort(() => Math.random() - 0.5).slice(0, count);
-}
-
-function checkEmpty() {
-  if (!container.querySelector(".card")) {
-    generateCards();
-  }
-}
-
-// Start
-generateCards();
-</script>
-
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>

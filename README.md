@@ -1,409 +1,379 @@
-# MFARRASMAJID.ID# MFARRASMAJID.ID
+# 🚀 M. Farras Majid - Portfolio Website
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+> Website portfolio profesional untuk M. Farras Majid — Web Developer, Data Engineer & DevOps Engineer.
 
-[![Security Status](https://img.shields.io/badge/Security-Production%20Ready-success)](./SECURITY.md)**mfarrasmajid.id** adalah website pribadi yang menampilkan portofolio, pengalaman, dan karya Farras Majid.  
-
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)Website ini dibangun untuk memberikan gambaran profesional sekaligus personal branding di dunia digital.
-
-
-
-**mfarrasmajid.id** adalah website portofolio personal yang menampilkan pengalaman profesional, proyek, dan pencapaian Farras Majid melalui interface timeline interaktif.## 🌐 Fitur Utama
-
-- **Halaman Portofolio** — Menampilkan proyek-proyek yang pernah dikerjakan.
-
-🌐 **Live Demo**: [mfarrasmajid.id](https://mfarrasmajid.id)- **Timeline Pengalaman** — Visualisasi perjalanan karier dan pencapaian.
-
-- **Kontak & Media Sosial** — Memudahkan pengunjung terhubung langsung.
+![Portfolio Preview](images/og-image.jpg)
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 📋 Daftar Isi
 
-## ✨ Fitur Utama- **HTML5**, **CSS3**, **JavaScript** untuk struktur dan interaksi.
-
-- **Bootstrap / TailwindCSS** untuk styling responsif.
-
-### 🎴 Interactive Card Deck (`index.html`)- **jQuery** untuk manipulasi DOM dan efek interaktif.
-
-- Swipe-based card interface dengan 5 random cards- **Font Awesome / Icon Library** untuk ikon.
-
-- Touch & mouse support untuk interaksi- Hosting di **VPS / Shared Hosting** dengan domain `mfarrasmajid.id`.
-
-- Progress tracking untuk cards yang telah dilihat
-
-- Smooth animations dan transitions## 📦 Instalasi & Pengembangan Lokal
-
-1. Clone repository ini:
-
-### 📅 Chronological Timeline (`profile.html`)   ```bash
-
-- Timeline view dengan sections berdasarkan tahun   git clone https://github.com/username/mfarrasmajid.id.git
-
-- Sticky year labels untuk navigasi mudah
-- Responsive design untuk mobile dan desktop
-- Scroll-based reveal animations
-
-### 📂 Detailed Project Pages
-- Individual showcase pages untuk proyek utama
-- Gallery images dengan Revolution Slider
-- Tech stack dan project details
-- Links ke project pages: `tracking-spmk.html`, `transport-management.html`, `womtools.html`, dll
-
-### 📧 Contact Forms
-- PHP-based contact forms dengan PHPMailer
-- CSRF protection & rate limiting
-- Email validation & sanitization
-- SMTP & simple email support
+- [Tentang](#-tentang)
+- [Fitur](#-fitur)
+- [Tech Stack](#-tech-stack)
+- [Struktur Proyek](#-struktur-proyek)
+- [Cara Instalasi](#-cara-instalasi)
+- [Konfigurasi](#-konfigurasi)
+- [Halaman](#-halaman)
+- [SEO](#-seo)
+- [Performa](#-performa)
+- [Kustomisasi](#-kustomisasi)
+- [Deployment](#-deployment)
+- [Lisensi](#-lisensi)
+- [Kontak](#-kontak)
 
 ---
 
-## 🛠️ Tech Stack
+## 🎯 Tentang
 
-### Frontend
-- **HTML5** - Semantic markup structure
-- **CSS3** - Custom styling dengan advanced animations
-- **Vanilla JavaScript** - Interactive card mechanics & timeline
-- **jQuery 3.x** - DOM manipulation & effects
-- **Bootstrap-based UI** - Responsive navigation (`bootsnav.css`)
-- **Revolution Slider** - Image carousels & galleries
-- **Google Fonts** - Roboto & Montserrat typography
+Website portfolio ini dibuat untuk menampilkan profil, keahlian, proyek, dan artikel blog dari **M. Farras Majid**. Dibangun dengan HTML, CSS, dan JavaScript murni (vanilla) tanpa framework tambahan, sehingga ringan, cepat, dan mudah di-deploy di mana saja.
 
-### Backend
-- **PHP 7.4+** - Contact form processing
-- **PHPMailer** - Email delivery system
-- **Apache** - Web server dengan mod_rewrite
-
-### Development Environment
-- **XAMPP** - Local development stack
-- **Git** - Version control
-- No build tools - Direct file editing workflow
+### Highlights:
+- **Desain Glassmorphism** dengan tema hitam-merah (70% hitam, 30% merah)
+- **Fully Responsive** - tampil sempurna di semua ukuran layar
+- **SEO Optimized** - meta tags, structured data, dan semantic HTML
+- **Contact Form** terhubung langsung ke email via FormSubmit
+- **Zero Dependencies** - tidak memerlukan build tools atau package manager
 
 ---
 
-## 📁 Project Structure
+## ✨ Fitur
+
+### 🏠 Homepage
+- Hero section dengan typing animation
+- Statistik pengalaman kerja
+- Floating cards dengan glassmorphism effect
+- Smooth scroll navigation
+
+### 👤 About Me
+- Profil lengkap dengan foto
+- Info kontak dan status availability
+- Experience badge
+- Deskripsi profesional
+
+### 🛠 Skills
+- 3 kategori skill: Web Dev, Data Engineering, DevOps
+- Animated skill bars
+- Icon teknologi yang relevan
+- Progress bar dengan animasi scroll-triggered
+
+### 💼 Projects
+- Grid layout dengan filter kategori (All / Web / Data / DevOps / Open Source)
+- Project cards dengan hover overlay
+- Link ke live demo dan GitHub repository
+- Preview gambar proyek
+
+### 📝 Blog
+- Artikel listing dengan category filter
+- Blog card dengan thumbnail, metadata, dan excerpt
+- Read more navigation
+- Kategori: Web Dev, Data Engineering, DevOps, Tutorial
+
+### 📬 Contact
+- Form lengkap: nama, email, telepon, subjek, budget, pesan
+- **Terhubung ke email via [FormSubmit.co](https://formsubmit.co/)**
+- Anti-spam honeypot
+- Validasi form client-side
+- Info kontak dan social media links
+
+### 🔗 Navigasi & UX
+- Fixed navbar dengan scroll effect
+- Mobile hamburger menu
+- Back to top button
+- Tombol "Hire Me" yang prominent
+- Loading animation
+- Smooth page transitions
+
+### ⚙️ Technical
+- Halaman error kustom (403, 404) sesuai tema
+- robots.txt untuk SEO
+- Schema.org structured data (JSON-LD)
+- Open Graph & Twitter Card meta tags
+- Lazy loading images
+- Prefers-reduced-motion support
+- Keyboard navigation support
+
+---
+
+## 🔧 Tech Stack
+
+| Teknologi | Kegunaan |
+|-----------|----------|
+| **HTML5** | Struktur & Semantic Markup |
+| **CSS3** | Styling, Glassmorphism, Animations, Responsive |
+| **JavaScript (ES6+)** | Interaktivitas, Animasi, Form Handling |
+| **Google Fonts (Inter)** | Typography |
+| **Font Awesome 6** | Iconography |
+| **FormSubmit.co** | Form-to-Email Service |
+
+---
+
+## 📁 Struktur Proyek
 
 ```
-portofolio/
-├── index.html              # Interactive card deck (main page)
-├── profile.html            # Chronological timeline view
-├── tracking-spmk.html      # Project showcase page
-├── transport-management.html
-├── womtools.html
-├── 40x.html               # Error page
+mfarrasmajid/
 ├── css/
-│   ├── style.css          # Main stylesheet (3870+ lines)
-│   ├── bootsnav.css       # Navigation components
-│   ├── responsive.css     # Mobile optimizations
-│   └── custom.css         # Additional customizations
+│   └── style.css           # Stylesheet utama (glassmorphism, responsive)
 ├── js/
-│   ├── main.js            # Core interactions (1899+ lines)
-│   ├── bootsnav.js        # Navigation behavior
-│   ├── jquery.min.js      # jQuery library
-│   └── hamburger-menu.js  # Mobile menu
+│   └── main.js             # JavaScript utama (animasi, navigasi, form)
 ├── images/
-│   ├── _shadalkane/       # Project screenshots by folder
-│   │   ├── tracking-spmk/
-│   │   ├── transport-management/
-│   │   └── [project-name]/
-│   ├── icons/             # Technology & skill icons
-│   ├── career/            # Career milestone images
-│   └── certification/     # Certificate images
-├── email-templates/
-│   ├── contact-form.php   # Main contact handler
-│   ├── security-functions.php  # Security utilities
-│   ├── config.php.example # SMTP configuration template
-│   └── README.md          # Setup instructions
-├── bak/                   # Detailed project showcase pages
-├── revolution/            # Revolution Slider framework
-└── fonts/                 # Local font files
+│   ├── profile.jpg          # Foto profil hero section
+│   ├── about.jpg            # Foto about section
+│   ├── og-image.jpg         # Open Graph image untuk social media
+│   ├── projects/
+│   │   ├── project-1.jpg    # Screenshot proyek 1
+│   │   ├── project-2.jpg    # Screenshot proyek 2
+│   │   ├── ...              # Screenshot proyek lainnya
+│   │   └── project-9.jpg    # Screenshot proyek 9
+│   └── blog/
+│       ├── blog-1.jpg       # Thumbnail blog 1
+│       ├── blog-2.jpg       # Thumbnail blog 2
+│       ├── ...              # Thumbnail blog lainnya
+│       └── blog-9.jpg       # Thumbnail blog 9
+├── index.html               # Homepage utama
+├── blog.html                # Halaman daftar artikel blog
+├── projects.html            # Halaman semua proyek + repository
+├── contact.html             # Halaman contact form
+├── 404.html                 # Halaman error 404
+├── 403.html                 # Halaman error 403
+├── robots.txt               # File robots untuk SEO
+└── README.md                # Dokumentasi proyek (file ini)
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Cara Instalasi
 
-### Prerequisites
-- **XAMPP** (Apache + PHP 7.4+)
-- **Git** for cloning
-- Code editor (VS Code recommended)
+### Prasyarat
+- Web server (Apache/Nginx) atau bisa dijalankan secara lokal
+- Browser modern (Chrome, Firefox, Edge, Safari)
 
-### Installation
+### Langkah-langkah
 
-1. **Clone the repository**
+1. **Clone repository:**
    ```bash
-   git clone https://github.com/mfarrasmajid/mfarrasmajid-id.git
-   cd mfarrasmajid-id
+   git clone https://github.com/mfarrasmajid/portfolio.git
+   cd portfolio
    ```
 
-2. **Move to XAMPP directory**
+2. **Menggunakan XAMPP (Local Development):**
+   ```
+   - Copy folder ke: xampp/htdocs/mfarrasmajid/
+   - Jalankan Apache dari XAMPP Control Panel
+   - Buka browser: http://localhost/mfarrasmajid/
+   ```
+
+3. **Menggunakan VS Code Live Server:**
+   ```
+   - Install extension "Live Server"
+   - Klik kanan pada index.html > "Open with Live Server"
+   ```
+
+4. **Menggunakan Python Simple Server:**
    ```bash
-   # Windows
-   move mfarrasmajid-id C:\xampp\htdocs\portofolio
-   
-   # Linux/Mac
-   mv mfarrasmajid-id /opt/lampp/htdocs/portofolio
+   python -m http.server 8000
+   # Buka http://localhost:8000
    ```
-
-3. **Start Apache**
-   - Open XAMPP Control Panel
-   - Start Apache service
-
-4. **Access the website**
-   ```
-   http://localhost/portofolio/
-   ```
-
-### Email Setup (Optional)
-
-If you want to enable contact forms:
-
-1. **Configure SMTP credentials**
-   ```bash
-   cd email-templates
-   cp config.php.example config.php
-   ```
-
-2. **Edit `config.php`** with your SMTP details:
-   ```php
-   define('SMTP_HOST', 'smtp.example.com');
-   define('SMTP_USERNAME', 'your-username');
-   define('SMTP_PASSWORD', 'your-password');
-   define('SMTP_PORT', 587);
-   define('RECEIVER_EMAIL', 'your-email@example.com');
-   ```
-
-3. **Test the contact form** at `/contact-form-example.php`
-
-📖 **Detailed setup**: See [`email-templates/README.md`](email-templates/README.md)
 
 ---
 
-## 📝 Adding New Content
+## ⚙️ Konfigurasi
 
-### Adding a Project/Timeline Entry
+### 1. Setup Contact Form (Email)
 
-Content is stored in **JavaScript arrays** within HTML files. Update both `index.html` and `profile.html`:
+Form di halaman contact menggunakan **FormSubmit.co** agar pesan langsung terkirim ke email.
 
-**Example:**
-```javascript
-// In index.html and profile.html
-const projects = [
-  {
-    imgSrc: "images/_shadalkane/your-project/your-project-1.png",
-    altText: "Your Project",
-    date: "Bulan Tahun",
-    title: "Your Project Title",
-    description: "Membuat aplikasi full stack dengan menggunakan stack Laravel, HTML, CSS, Javascript, dan MySQL.",
-    classs: "cover cover-left" // or cover-top, cover-bottom, cover-right, cover-center
-  },
-  // ... existing entries
-];
+1. Buka file `contact.html`
+2. Cari baris berikut:
+   ```html
+   action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
+   ```
+3. Ganti `YOUR_EMAIL@gmail.com` dengan email Anda
+4. Submit form pertama kali untuk aktivasi (cek inbox untuk konfirmasi)
+5. Setelah diaktivasi, semua submit selanjutnya langsung masuk email
+
+### 2. Ganti Gambar
+
+Ganti semua gambar placeholder di folder `images/`:
+
+| File | Ukuran Rekomendasi | Keterangan |
+|------|-------------------|------------|
+| `profile.jpg` | 760x760px | Foto profil hero section |
+| `about.jpg` | 800x900px | Foto about section |
+| `og-image.jpg` | 1200x630px | Preview social media share |
+| `projects/project-*.jpg` | 800x500px | Screenshot proyek |
+| `blog/blog-*.jpg` | 800x500px | Thumbnail artikel |
+
+### 3. Update Informasi Personal
+
+- **Nama, Email, Bio**: Edit di `index.html` dan halaman lainnya
+- **Social Media Links**: Cari dan ganti semua URL `linkedin.com/in/mfarrasmajid`, `github.com/mfarrasmajid`, dll
+- **URL Website**: Ganti `https://mfarrasmajid.id` di meta tags
+
+### 4. Update Domain di Meta Tags
+
+Cari & replace di semua file HTML:
+```
+https://mfarrasmajid.id → https://yourdomain.com
 ```
 
-### Adding Project Images
+---
 
-1. Create project directory:
-   ```bash
-   mkdir images/_shadalkane/your-project
-   ```
+## 📄 Halaman
 
-2. Add images with naming convention:
-   ```
-   your-project-1.png
-   your-project-2.png
-   your-project-3.png
-   ```
-
-3. Image positioning classes:
-   - `cover cover-top` - Top alignment
-   - `cover cover-bottom` - Bottom alignment
-   - `cover cover-left` - Left alignment
-   - `cover cover-right` - Right alignment
-   - `cover cover-center` - Center alignment
-   - `icon` - For skill/technology icons
-
-### Creating Detailed Project Pages
-
-1. Copy template from `bak/` directory
-2. Update project details, images, and tech stack
-3. Add screenshots to image gallery section
-4. Link from main timeline entry (optional)
+| Halaman | File | Deskripsi |
+|---------|------|-----------|
+| **Home** | `index.html` | Hero, About, Skills, Projects, Blog, CTA |
+| **Blog** | `blog.html` | Daftar semua artikel dengan filter kategori |
+| **Projects** | `projects.html` | Semua proyek dengan link GitHub repository |
+| **Contact** | `contact.html` | Form kontak + info + social media |
+| **404** | `404.html` | Custom error page - Page Not Found |
+| **403** | `403.html` | Custom error page - Access Forbidden |
 
 ---
 
-## 🎨 Customization
+## 🔍 SEO
 
-### Styling
-- **Main theme**: `css/style.css` (comprehensive theme system)
-- **Colors**: Update CSS variables in `:root`
-- **Fonts**: Google Fonts imported in `<style>` sections
-- **Responsive**: `css/responsive.css` for mobile breakpoints
+Website ini sudah dioptimasi untuk SEO:
 
-### Animations
-- **Card interactions**: Edit `index.html` JavaScript section
-- **Timeline reveals**: Modify `profile.html` observer code
-- **WOW.js**: Used in main.js for scroll animations
+- ✅ **Semantic HTML5** - Menggunakan tag `<section>`, `<article>`, `<nav>`, `<footer>`, `<header>`
+- ✅ **Meta Tags** - Title, description, keywords, author, robots
+- ✅ **Open Graph** - Facebook, LinkedIn sharing preview
+- ✅ **Twitter Card** - Twitter sharing preview
+- ✅ **Schema.org** - JSON-LD structured data (Person)
+- ✅ **robots.txt** - Search engine crawling rules
+- ✅ **Alt Text** - Semua gambar memiliki alt text deskriptif
+- ✅ **Heading Hierarchy** - H1 > H2 > H3 yang terstruktur
+- ✅ **Semantic URLs** - Clean URL structure
+- ✅ **Mobile Friendly** - Fully responsive design
+- ✅ **Fast Loading** - No framework overhead, minimal assets
 
-### Navigation
-- **Menu items**: Edit navigation in HTML header sections
-- **Mobile menu**: Configured in `js/hamburger-menu.js`
-- **Sticky behavior**: Controlled by `js/bootsnav.js`
-
----
-
-## 🔒 Security
-
-This project implements comprehensive security measures:
-
-- ✅ **Input validation & sanitization** (XSS prevention)
-- ✅ **CSRF token protection** for all forms
-- ✅ **Rate limiting** (5 attempts/hour)
-- ✅ **Email header injection prevention**
-- ✅ **HTTPS enforcement** via .htaccess
-- ✅ **Content Security Policy** headers
-- ✅ **Directory access control**
-- ✅ **Secure credential management**
-
-**Security Score: 92/100** - Production Ready ✅
-
-📖 **Full documentation**: See [`SECURITY.md`](SECURITY.md) & [`IMPLEMENTATION_SUMMARY.md`](IMPLEMENTATION_SUMMARY.md)
+### Rekomendasi Tambahan:
+- Tambahkan `sitemap.xml` untuk indexing yang lebih baik
+- Setup Google Search Console dan submit sitemap
+- Tambahkan Google Analytics untuk tracking
 
 ---
 
-## 📱 Browser Support
+## ⚡ Performa
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-### Features
-- Responsive design (mobile-first)
-- Touch events support
-- Pointer events API
-- CSS Grid & Flexbox
-- Modern JavaScript (ES6+)
+- **No build process** - Langsung serve file statis
+- **Minimal HTTP requests** - CSS & JS masing-masing 1 file
+- **Lazy loading** - Gambar dimuat saat dibutuhkan
+- **Font preconnect** - Google Fonts dioptimasi dengan preconnect
+- **Efficient CSS** - Menggunakan CSS variables untuk konsistensi
+- **SVG placeholder** - Auto-generated placeholder untuk gambar yang gagal load
+- **Reduced motion** - Respects `prefers-reduced-motion` user preference
 
 ---
 
-## 🐛 Troubleshooting
+## 🎨 Kustomisasi
 
-### Forms not working?
-1. Check CSRF token implementation in HTML forms
-2. Verify `config.php` exists with valid credentials
-3. Check `email-templates/error.log` for details
-4. Ensure PHP sessions are enabled
+### Mengubah Warna Tema
 
-### Images not loading?
-1. Verify image paths in JavaScript arrays
-2. Check file permissions (755 for directories, 644 for files)
-3. Ensure images exist in `images/_shadalkane/[project]/`
+Edit CSS variables di `css/style.css`:
 
-### .htaccess errors?
-1. Verify `mod_rewrite` is enabled in Apache
-2. Check Apache error log for details
-3. Ensure `AllowOverride All` in Apache config
+```css
+:root {
+  --bg-primary: #0a0a0a;       /* Background utama */
+  --bg-secondary: #111111;      /* Background secondary */
+  --red-primary: #e63946;       /* Warna aksen utama */
+  --red-secondary: #c1121f;     /* Warna aksen hover */
+  --red-light: #ff6b6b;         /* Warna aksen light */
+  --text-primary: #f1f1f1;      /* Warna teks utama */
+  --text-secondary: #b0b0b0;    /* Warna teks secondary */
+}
+```
 
-### Rate limiting issues?
-1. Delete `email-templates/rate_limit.json` to reset
-2. Adjust limits in `config.php`
-3. Check file permissions on rate_limit.json
+### Mengubah Font
 
----
+Ganti Google Fonts URL di `<head>` semua file HTML dan update `font-family` di CSS.
 
-## 📂 Key Files Reference
+### Menambah Proyek Baru
 
-| File | Purpose | Lines |
-|------|---------|-------|
-| `index.html` | Interactive card deck interface | ~800 |
-| `profile.html` | Chronological timeline view | ~1100 |
-| `css/style.css` | Main stylesheet & theme | 3870 |
-| `js/main.js` | Core interactions & animations | 1899 |
-| `email-templates/contact-form.php` | Form handler | ~130 |
-| `email-templates/security-functions.php` | Security utilities | ~280 |
+Copy template project card di `projects.html` dan sesuaikan:
 
----
-
-## 🌍 Deployment
-
-### Production Checklist
-
-- [ ] Update domain references in files
-- [ ] Configure SSL certificate
-- [ ] Set up SMTP credentials in `config.php`
-- [ ] Test all forms with CSRF tokens
-- [ ] Verify .htaccess rules work on host
-- [ ] Enable error logging, disable display_errors
-- [ ] Test on multiple devices/browsers
-- [ ] Verify image optimization
-- [ ] Set up analytics (optional)
-- [ ] Configure backup strategy
-
-### Hosting Requirements
-- PHP 7.4 or higher
-- Apache with mod_rewrite
-- SSL certificate (Let's Encrypt recommended)
-- At least 100MB storage
-- Support for .htaccess files
+```html
+<div class="project-card glass fade-in" data-category="web">
+  <div class="project-thumb">
+    <img src="images/projects/your-project.jpg" alt="Project Name">
+    <div class="project-overlay">
+      <a href="DEMO_URL"><i class="fas fa-external-link-alt"></i></a>
+      <a href="GITHUB_URL"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+  <div class="project-info">
+    <div class="project-tags">
+      <span>Tech1</span>
+      <span>Tech2</span>
+    </div>
+    <h3>Project Title</h3>
+    <p>Project description...</p>
+  </div>
+</div>
+```
 
 ---
 
-## 🤝 Contributing
+## 🌐 Deployment
 
-This is a personal portfolio project, but suggestions are welcome!
+### GitHub Pages
+```bash
+git init
+git add .
+git commit -m "Initial portfolio"
+git remote add origin https://github.com/username/portfolio.git
+git push -u origin main
+# Enable GitHub Pages di Settings > Pages > Source: main branch
+```
 
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/improvement`)
-3. Commit changes (`git commit -am 'Add improvement'`)
-4. Push to branch (`git push origin feature/improvement`)
-5. Open a Pull Request
+### Netlify
+1. Push ke GitHub
+2. Login ke [netlify.com](https://netlify.com)
+3. New site from Git > pilih repository
+4. Deploy otomatis!
 
----
+### Vercel
+```bash
+npm i -g vercel
+vercel
+```
 
-## 📄 License
+### VPS / Shared Hosting
+Upload semua file ke `public_html/` via FTP/SFTP.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 👤 Author
-
-**Farras Majid**
-- Website: [mfarrasmajid.id](https://mfarrasmajid.id)
-- GitHub: [@mfarrasmajid](https://github.com/mfarrasmajid)
-
----
-
-## 🙏 Acknowledgments
-
-- Revolution Slider for carousel framework
-- Bootstrap team for UI components
-- PHPMailer for email functionality
-- Font Awesome for icons
-- Google Fonts for typography
-
----
-
-## 📊 Project Stats
-
-- **Total Files**: 100+
-- **Lines of CSS**: 3,870+
-- **Lines of JavaScript**: 1,899+
-- **Project Entries**: 50+
-- **Years Covered**: 2015-2025
-- **Technologies Showcased**: 20+
+### Apache `.htaccess` (Error Pages)
+```apache
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+```
 
 ---
 
-## 🔗 Quick Links
+## 📝 Lisensi
 
-- [Security Documentation](SECURITY.md)
-- [Implementation Summary](IMPLEMENTATION_SUMMARY.md)
-- [Email Setup Guide](email-templates/README.md)
-- [AI Agent Guidelines](.github/copilot-instructions.md)
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode ini untuk keperluan pribadi maupun komersial.
 
 ---
 
-**Last Updated**: November 2025  
-**Status**: Active Development ✨
+## 📬 Kontak
+
+**M. Farras Majid**
+
+- 🌐 Website: [mfarrasmajid.id](https://mfarrasmajid.id)
+- 📧 Email: muhammad.farras@mitratel.co.id
+- 💼 LinkedIn: [linkedin.com/in/m-farras-majid](https://linkedin.com/in/m-farras-majid)
+- 🐙 GitHub: [github.com/mfarrasmajid](https://github.com/mfarrasmajid)
+
+---
+
+<p align="center">
+  Made with ❤️ by M. Farras Majid
+</p>

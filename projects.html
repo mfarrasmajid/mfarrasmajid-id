@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio proyek M. Farras Majid - Kumpulan proyek Web Development, Data Engineering, dan DevOps dengan link repository GitHub.">
+  <meta name="keywords" content="Portfolio, Projects, GitHub, Repository, Web Development, Data Engineering, DevOps, M. Farras Majid">
+  <meta name="author" content="M. Farras Majid">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects - M. Farras Majid">
+  <meta property="og:description" content="Kumpulan proyek Web Development, Data Engineering, dan DevOps.">
+
+  <title>Projects | M. Farras Majid</title>
+
+  <link rel="icon" type="image/png" href="images/icon-shadalkane.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg-decoration">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Farras<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-hire-btn">🚀 Hire Me</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="fade-in">My <span>Projects</span></h1>
+      <p class="fade-in">Kumpulan proyek dan repository yang telah saya kerjakan. Setiap proyek memiliki link ke GitHub repository.</p>
+      <div class="breadcrumb fade-in">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span>Projects</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <section style="padding-top: 40px;">
+    <div class="container">
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass fade-in" data-category="data">
+          <div class="project-thumb" onclick="openLightbox('images/projects/work-1.jpg', 'DWH Pipeline Manager')">
+            <img src="images/projects/work-1.jpg" alt="DWH Pipeline Manager" loading="lazy">
+            <div class="project-overlay">
+              <span class="overlay-zoom" aria-label="Zoom gambar"><i class="fas fa-search-plus"></i></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>Data Engineering</span>
+              <span>Airflow</span>
+              <span>ClickHouse</span>
+            </div>
+            <h3>DWH Pipeline Manager</h3>
+            <p>Platform manajemen pipeline data warehouse enterprise yang mengorkestrasikan aliran data secara end-to-end, mulai dari berbagai data source hingga ke lakehouse dan datamart dengan monitoring real-time.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass fade-in" data-category="web">
+          <div class="project-thumb" onclick="openLightbox('images/projects/work-2.jpg', 'API Manager Mitratel')">
+            <img src="images/projects/work-2.jpg" alt="API Manager Mitratel" loading="lazy">
+            <div class="project-overlay">
+              <span class="overlay-zoom" aria-label="Zoom gambar"><i class="fas fa-search-plus"></i></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>REST API</span>
+              <span>Laravel</span>
+              <span>PostgreSQL</span>
+            </div>
+            <h3>API Manager Mitratel</h3>
+            <p>Sistem manajemen API terpusat untuk Mitratel yang menangani autentikasi, logging, rate limiting, serta monitoring penggunaan API secara komprehensif dan real-time.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass fade-in" data-category="web">
+          <div class="project-thumb" onclick="openLightbox('images/projects/work-3.jpg', 'Inhouse App Mitratel')">
+            <img src="images/projects/work-3.jpg" alt="Inhouse App Mitratel" loading="lazy">
+            <div class="project-overlay">
+              <span class="overlay-zoom" aria-label="Zoom gambar"><i class="fas fa-search-plus"></i></span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>Laravel</span>
+              <span>Full Stack</span>
+              <span>Enterprise</span>
+            </div>
+            <h3>Inhouse App Mitratel</h3>
+            <p>Aplikasi enterprise internal Mitratel yang dirancang untuk mendukung kegiatan operasional seluruh unit bisnis, mencakup workflow automation, reporting, dan integrasi antar departemen.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub CTA -->
+      <div class="glass fade-in" style="padding: 48px; text-align: center; margin-top: 60px; border: 1px solid rgba(230,57,70,0.2);">
+        <i class="fab fa-github" style="font-size: 3rem; color: var(--red-primary); margin-bottom: 16px;"></i>
+        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px;">Lihat Semua Repository</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto;">
+          Kunjungi profil GitHub saya untuk melihat semua repository, kontribusi open source, dan proyek lainnya.
+        </p>
+        <a href="https://github.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <i class="fab fa-github"></i> Visit GitHub Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spacer -->
+  <div style="height: 80px;"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Farras<span>.</span></a>
+          <p>Web Developer, Data Engineer & DevOps Engineer. Membangun solusi digital yang inovatif dan scalable.</p>
+          <div class="footer-social">
+            <a href="https://github.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/m-farras-majid" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <!-- <a href="https://twitter.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+            <a href="https://instagram.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="contact.html">Data Engineering</a></li>
+            <li><a href="contact.html">DevOps Consulting</a></li>
+            <li><a href="contact.html">Cloud Architecture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe untuk mendapatkan artikel terbaru langsung ke inbox Anda.</p>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 M. Farras Majid. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Tutup">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" alt="" onclick="event.stopPropagation()">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

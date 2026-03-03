@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog M. Farras Majid - Artikel seputar Web Development, Data Engineering, dan DevOps. Tips, tutorial, dan sharing pengalaman.">
+  <meta name="keywords" content="Blog, Web Development, Data Engineering, DevOps, Tutorial, Tips, M. Farras Majid">
+  <meta name="author" content="M. Farras Majid">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog - M. Farras Majid">
+  <meta property="og:description" content="Artikel seputar Web Development, Data Engineering, dan DevOps.">
+
+  <title>Blog | M. Farras Majid</title>
+
+  <link rel="icon" type="image/png" href="images/icon-shadalkane.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg-decoration">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Farras<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-hire-btn">🚀 Hire Me</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="fade-in">My <span>Blog</span></h1>
+      <p class="fade-in">Sharing pengetahuan dan pengalaman seputar teknologi, development, dan engineering.</p>
+      <div class="breadcrumb fade-in">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span>Blog</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Filter -->
+  <section style="padding-top: 40px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="projects-filter fade-in" style="margin-bottom: 40px;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="data">Data Eng</button>
+        <button class="filter-btn" data-filter="devops">DevOps</button>
+        <button class="filter-btn" data-filter="cicd">CI/CD</button>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Blog 1 -->
+        <article class="blog-card glass fade-in" data-category="data">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*NhCjwIeMzomviGGCQqEhCA.png" alt="Datawarehousing" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">Data Engineering</span>
+              <span><i class="far fa-calendar"></i> 7 Nov 2025</span>
+            </div>
+            <h3>Datawarehousing, Bagaimana Cara Mudahnya?</h3>
+            <p>Banyak tim menunda membangun data warehouse karena takut rumit dan mahal. Padahal, kuncinya bukan pada alat paling canggih, melainkan fokus, desain sederhana, dan eksekusi yang disiplin.</p>
+            <a href="https://medium.com/@m.farras.majid/datawarehousing-bagaimana-cara-mudahnya-72ccb2225d7f" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog-card glass fade-in" data-category="devops">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*Tl8Ksshv7nA5C-ZOgFESxQ.png" alt="Observability Stack Kubernetes" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">DevOps</span>
+              <span><i class="far fa-calendar"></i> 5 Nov 2025</span>
+            </div>
+            <h3>Membangun Observability Stack di Kubernetes: Prometheus, Loki, Grafana, Tempo</h3>
+            <p>Observability adalah kombo tiga serangkai: metrics untuk angka performa, logs untuk jejak kejadian, dan traces untuk alur request end-to-end. Stack open-source paling masuk akal untuk banyak tim.</p>
+            <a href="https://medium.com/@m.farras.majid/membangun-observability-stack-di-kubernetes-prometheus-loki-grafana-tempo-ad2177b270eb" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 3 -->
+        <article class="blog-card glass fade-in" data-category="devops">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*gFg9asuWvW2Zrpi5Fb_9kQ.png" alt="Docker Compose vs Kubernetes" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">DevOps</span>
+              <span><i class="far fa-calendar"></i> 4 Nov 2025</span>
+            </div>
+            <h3>Docker Compose vs Kubernetes: Kapan Harus Beralih ke K8s?</h3>
+            <p>Banyak tim memulai perjalanan kontainerisasi dengan Docker Compose karena kesederhanaannya. Namun seiring aplikasi tumbuh, kebutuhan operasional ikut meningkat. Kapan tepatnya perlu beranjak ke K8s?</p>
+            <a href="https://medium.com/@m.farras.majid/docker-compose-vs-kubernetes-kapan-harus-beralih-ke-k8s-8a3ee759c4f0" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 4 -->
+        <article class="blog-card glass fade-in" data-category="devops">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*BhSXEmKJt4abYWFtZP8ioQ.png" alt="Docker vs Virtual Machine" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">DevOps</span>
+              <span><i class="far fa-calendar"></i> 3 Nov 2025</span>
+            </div>
+            <h3>Docker vs Virtual Machine: Mengapa Developer Modern Lebih Memilih Container?</h3>
+            <p>Di era pengiriman software yang serba cepat, dua teknologi sering muncul saat merancang lingkungan eksekusi: Virtual Machine dan container. Keduanya punya pendekatan dan trade-off yang berbeda.</p>
+            <a href="https://medium.com/@m.farras.majid/docker-vs-virtual-machine-mengapa-developer-modern-lebih-memilih-container-008c77bda551" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 5 -->
+        <article class="blog-card glass fade-in" data-category="cicd">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*bRzJmCdhsWVQxsKOsMpuuQ.png" alt="CI/CD Enterprise" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">CI/CD</span>
+              <span><i class="far fa-calendar"></i> 2 Nov 2025</span>
+            </div>
+            <h3>Mendesain Arsitektur CI/CD untuk Organisasi Enterprise</h3>
+            <p>Membangun CI/CD di level enterprise bukan sekadar membuat pipeline yang "jalan", melainkan merancang sistem yang repeatable, terukur, aman, dan patuh pada tata kelola.</p>
+            <a href="https://medium.com/@m.farras.majid/mendesain-arsitektur-ci-cd-untuk-organisasi-enterprise-dari-branching-strategy-hingga-approval-b09f61839dd9" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 6 -->
+        <article class="blog-card glass fade-in" data-category="cicd">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*lSE7hY88BDI8nSn31B2UcQ.png" alt="Multi-Stage Deployment" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">CI/CD</span>
+              <span><i class="far fa-calendar"></i> 1 Nov 2025</span>
+            </div>
+            <h3>Multi-Stage Deployment: Dev, Staging, Production dengan GitHub Actions Matrix</h3>
+            <p>Multi-stage deployment membantu tim merilis aplikasi secara bertahap dan terkontrol: Dev untuk iterasi cepat, Staging untuk verifikasi pra-rilis, dan Production untuk pengguna akhir.</p>
+            <a href="https://medium.com/@m.farras.majid/multi-stage-deployment-dev-staging-production-dengan-github-actions-matrix-0e52fc830218" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 7 -->
+        <article class="blog-card glass fade-in" data-category="cicd">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*t8LafQEkN1k8qeAYahYibw.png" alt="Build Docker Image Laravel" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">CI/CD</span>
+              <span><i class="far fa-calendar"></i> 31 Okt 2025</span>
+            </div>
+            <h3>Build Docker Image Otomatis untuk Laravel Menggunakan GitHub Actions dan Docker Hub</h3>
+            <p>Mengotomasi build Docker image untuk aplikasi Laravel membantu tim merilis lebih cepat, konsisten, dan terukur. Dengan GitHub Actions, setiap perubahan langsung memicu proses build-push.</p>
+            <a href="https://medium.com/@m.farras.majid/build-docker-image-otomatis-untuk-laravel-menggunakan-github-actions-dan-docker-hub-df10f3bc3572" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 8 -->
+        <article class="blog-card glass fade-in" data-category="cicd">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*OiO6C-tv8EeZQQOgPs6_MA.png" alt="ArgoCD dan Tekton" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">CI/CD</span>
+              <span><i class="far fa-calendar"></i> 30 Okt 2025</span>
+            </div>
+            <h3>CI/CD untuk Kubernetes: Menggunakan ArgoCD dan Tekton di Cluster Production</h3>
+            <p>Ketika aplikasi tumbuh dan tim bertambah, kebutuhan rilis yang cepat namun tetap stabil menjadi krusial. Kombinasi Tekton sebagai engine CI dan Argo CD sebagai GitOps CD menawarkan alur kerja teruji.</p>
+            <a href="https://medium.com/@m.farras.majid/ci-cd-untuk-kubernetes-menggunakan-argocd-dan-tekton-di-cluster-production-f13db60e36e0" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 9 -->
+        <article class="blog-card glass fade-in" data-category="cicd">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*ZXCkTqgew-peHn3fOesm5A.png" alt="Ekosistem CI/CD" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">CI/CD</span>
+              <span><i class="far fa-calendar"></i> 29 Okt 2025</span>
+            </div>
+            <h3>Mengenal Ekosistem CI/CD: Open Source vs SaaS, Mana yang Tepat untuk Timmu?</h3>
+            <p>CI/CD adalah kombinasi praktik, tooling, dan kultur. Pilihan besar biasanya jatuh pada Open Source (Jenkins, GitLab CE, Tekton) versus SaaS (GitHub Actions, CircleCI). Mana yang tepat?</p>
+            <a href="https://medium.com/@m.farras.majid/mengenal-ekosistem-ci-cd-open-source-vs-saas-mana-yang-tepat-untuk-timmu-2cd22fbcea47" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog 10 -->
+        <article class="blog-card glass fade-in" data-category="cicd">
+          <div class="blog-thumb">
+            <img src="https://cdn-images-1.medium.com/max/1024/1*05iceDdm2KxWNea_JslSZA.png" alt="Laravel AWS CI/CD" loading="lazy">
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class="blog-category">CI/CD</span>
+              <span><i class="far fa-calendar"></i> 28 Okt 2025</span>
+            </div>
+            <h3>Men-deploy Aplikasi Laravel ke AWS dengan CI/CD Pipeline (CodePipeline + ECS + Fargate)</h3>
+            <p>Kode disimpan di GitHub → CodePipeline memicu CodeBuild → image dipush ke ECR → ECS Fargate menarik image terbaru. Pipeline CI/CD yang andal, terukur, dan aman untuk Laravel.</p>
+            <a href="https://medium.com/@m.farras.majid/men-deploy-aplikasi-laravel-ke-aws-dengan-ci-cd-pipeline-codepipeline-ecs-fargate-674cab2f315a" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+              Baca di Medium <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Medium CTA -->
+      <div class="text-center mt-2 fade-in" style="margin-top: 40px;">
+        <a href="https://medium.com/@m.farras.majid" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <i class="fab fa-medium"></i> Baca Semua di Medium
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Farras<span>.</span></a>
+          <p>Web Developer, Data Engineer & DevOps Engineer. Membangun solusi digital yang inovatif dan scalable.</p>
+          <div class="footer-social">
+            <a href="https://github.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/m-farras-majid" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <!-- <a href="https://twitter.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
+            <a href="https://instagram.com/mfarrasmajid" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="contact.html">Data Engineering</a></li>
+            <li><a href="contact.html">DevOps Consulting</a></li>
+            <li><a href="contact.html">Cloud Architecture</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Subscribe untuk mendapatkan artikel terbaru langsung ke inbox Anda.</p>
+          <form class="footer-newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Email address" aria-label="Email address">
+            <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 M. Farras Majid. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
